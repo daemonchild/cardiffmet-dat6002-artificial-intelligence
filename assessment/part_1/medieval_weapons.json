@@ -1,0 +1,84 @@
+{
+    "directed": true,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "id": "Melee Weapon"
+        },
+        {
+            "id": "Weapon"
+        },
+        {
+            "id": "Bladed Weapon"
+        },
+        {
+            "id": "Dagger"
+        },
+        {
+            "id": "Stiletto"
+        },
+        {
+            "id": "Colonel Blood's Dagger"
+        },
+        {
+            "id": "Steel"
+        },
+        {
+            "id": "Cut"
+        },
+        {
+            "id": "Puncture"
+        },
+        {
+            "id": "Tower of London"
+        }
+    ],
+    "edges": [
+        {
+            "label": "IS-A",
+            "source": "Melee Weapon",
+            "target": "Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Bladed Weapon",
+            "target": "Melee Weapon"
+        },
+        {
+            "label": "primaryMaterial",
+            "source": "Bladed Weapon",
+            "target": "Steel"
+        },
+        {
+            "label": "causesDamage",
+            "source": "Bladed Weapon",
+            "target": "Cut"
+        },
+        {
+            "label": "IS-A",
+            "source": "Dagger",
+            "target": "Bladed Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Stiletto",
+            "target": "Dagger"
+        },
+        {
+            "label": "causesDamage",
+            "source": "Stiletto",
+            "target": "Puncture"
+        },
+        {
+            "label": "INSTANCE-OF",
+            "source": "Colonel Blood's Dagger",
+            "target": "Stiletto"
+        },
+        {
+            "label": "historicalOrigin",
+            "source": "Colonel Blood's Dagger",
+            "target": "Tower of London"
+        }
+    ]
+}
