@@ -16,3 +16,4 @@ jupyterlab
 ipython
 geopy 
 networkx
+pyvis
