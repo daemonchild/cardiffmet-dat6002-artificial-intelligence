@@ -1,0 +1,645 @@
+{
+    "directed": true,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "id": "Melee"
+        },
+        {
+            "id": "Weapon"
+        },
+        {
+            "id": "Ranged"
+        },
+        {
+            "id": "Siege Weapon"
+        },
+        {
+            "id": "Bladed Hand Weapon"
+        },
+        {
+            "id": "Blunt Hand Weapon"
+        },
+        {
+            "id": "Polearm"
+        },
+        {
+            "id": "Francisca"
+        },
+        {
+            "id": "Javelin"
+        },
+        {
+            "id": "Bow"
+        },
+        {
+            "id": "Arbalest"
+        },
+        {
+            "id": "Gun"
+        },
+        {
+            "id": "Artillery"
+        },
+        {
+            "id": "Siege Tower"
+        },
+        {
+            "id": "Battering Ram"
+        },
+        {
+            "id": "Cat"
+        },
+        {
+            "id": "Weasel"
+        },
+        {
+            "id": "Chemical Weapon"
+        },
+        {
+            "id": "Biological Weapon"
+        },
+        {
+            "id": "Psychological Weapon"
+        },
+        {
+            "id": "Sword"
+        },
+        {
+            "id": "Dagger"
+        },
+        {
+            "id": "Knife"
+        },
+        {
+            "id": "Club"
+        },
+        {
+            "id": "Mace"
+        },
+        {
+            "id": "Morning Star"
+        },
+        {
+            "id": "Holy Water Sprinkler"
+        },
+        {
+            "id": "Flail"
+        },
+        {
+            "id": "War Hammer"
+        },
+        {
+            "id": "Horseman's Pick"
+        },
+        {
+            "id": "Quarterstaff"
+        },
+        {
+            "id": "Spear"
+        },
+        {
+            "id": "Winged Spear"
+        },
+        {
+            "id": "Lance"
+        },
+        {
+            "id": "Pike"
+        },
+        {
+            "id": "Corseque"
+        },
+        {
+            "id": "Fauchard"
+        },
+        {
+            "id": "Glaive"
+        },
+        {
+            "id": "Guisarme"
+        },
+        {
+            "id": "Halberd"
+        },
+        {
+            "id": "Danish Axe"
+        },
+        {
+            "id": "Sparth"
+        },
+        {
+            "id": "Bardiche"
+        },
+        {
+            "id": "Pollaxe"
+        },
+        {
+            "id": "Modern Flanged Mace"
+        },
+        {
+            "id": "Maul"
+        },
+        {
+            "id": "Becs de Corbin"
+        },
+        {
+            "id": "Cross Bow"
+        },
+        {
+            "id": "Long Bow"
+        },
+        {
+            "id": "Hand Cannon"
+        },
+        {
+            "id": "Arquebus"
+        },
+        {
+            "id": "Stone Thrower (Pierrier)"
+        },
+        {
+            "id": "Cannon"
+        },
+        {
+            "id": "Arming Sword"
+        },
+        {
+            "id": "Broad Sword"
+        },
+        {
+            "id": "Falchion"
+        },
+        {
+            "id": "Long Sword"
+        },
+        {
+            "id": "Anelace"
+        },
+        {
+            "id": "Stiletto"
+        },
+        {
+            "id": "Poingnard"
+        },
+        {
+            "id": "Rondel"
+        },
+        {
+            "id": "Traction Trebuchet"
+        },
+        {
+            "id": "Counterweight Trebuchet"
+        },
+        {
+            "id": "Onager"
+        },
+        {
+            "id": "Mangonel"
+        },
+        {
+            "id": "Ballista"
+        },
+        {
+            "id": "Springald"
+        },
+        {
+            "id": "Bombard"
+        },
+        {
+            "id": "Petard"
+        },
+        {
+            "id": "Steel"
+        },
+        {
+            "id": "Puncture"
+        },
+        {
+            "id": "Cut"
+        },
+        {
+            "id": "Bash"
+        },
+        {
+            "id": "Pommel"
+        },
+        {
+            "id": "Hilt"
+        },
+        {
+            "id": "15th Century"
+        },
+        {
+            "id": "Wood"
+        }
+    ],
+    "edges": [
+        {
+            "label": "IS-A",
+            "source": "Melee",
+            "target": "Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Ranged",
+            "target": "Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Siege Weapon",
+            "target": "Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Bladed Hand Weapon",
+            "target": "Melee"
+        },
+        {
+            "label": "primaryMaterial",
+            "source": "Bladed Hand Weapon",
+            "target": "Steel"
+        },
+        {
+            "label": "IS-A",
+            "source": "Blunt Hand Weapon",
+            "target": "Melee"
+        },
+        {
+            "label": "causesDamage",
+            "source": "Blunt Hand Weapon",
+            "target": "Bash"
+        },
+        {
+            "label": "primaryMaterial",
+            "source": "Blunt Hand Weapon",
+            "target": "Wood"
+        },
+        {
+            "label": "IS-A",
+            "source": "Polearm",
+            "target": "Melee"
+        },
+        {
+            "label": "IS-A",
+            "source": "Francisca",
+            "target": "Ranged"
+        },
+        {
+            "label": "IS-A",
+            "source": "Javelin",
+            "target": "Ranged"
+        },
+        {
+            "label": "IS-A",
+            "source": "Bow",
+            "target": "Ranged"
+        },
+        {
+            "label": "IS-A",
+            "source": "Arbalest",
+            "target": "Ranged"
+        },
+        {
+            "label": "IS-A",
+            "source": "Gun",
+            "target": "Ranged"
+        },
+        {
+            "label": "IS-A",
+            "source": "Artillery",
+            "target": "Ranged"
+        },
+        {
+            "label": "IS-A",
+            "source": "Siege Tower",
+            "target": "Siege Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Battering Ram",
+            "target": "Siege Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Cat",
+            "target": "Siege Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Weasel",
+            "target": "Siege Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Chemical Weapon",
+            "target": "Siege Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Biological Weapon",
+            "target": "Siege Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Psychological Weapon",
+            "target": "Siege Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Sword",
+            "target": "Bladed Hand Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Dagger",
+            "target": "Bladed Hand Weapon"
+        },
+        {
+            "label": "causesDamage",
+            "source": "Dagger",
+            "target": "Puncture"
+        },
+        {
+            "label": "IS-A",
+            "source": "Knife",
+            "target": "Bladed Hand Weapon"
+        },
+        {
+            "label": "causesDamage",
+            "source": "Knife",
+            "target": "Cut"
+        },
+        {
+            "label": "IS-A",
+            "source": "Club",
+            "target": "Blunt Hand Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Mace",
+            "target": "Blunt Hand Weapon"
+        },
+        {
+            "label": "causesDamage",
+            "source": "Mace",
+            "target": "Puncture"
+        },
+        {
+            "label": "IS-A",
+            "source": "Morning Star",
+            "target": "Blunt Hand Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Holy Water Sprinkler",
+            "target": "Blunt Hand Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Flail",
+            "target": "Blunt Hand Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "War Hammer",
+            "target": "Blunt Hand Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Horseman's Pick",
+            "target": "Blunt Hand Weapon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Quarterstaff",
+            "target": "Polearm"
+        },
+        {
+            "label": "IS-A",
+            "source": "Spear",
+            "target": "Polearm"
+        },
+        {
+            "label": "IS-A",
+            "source": "Winged Spear",
+            "target": "Polearm"
+        },
+        {
+            "label": "IS-A",
+            "source": "Lance",
+            "target": "Polearm"
+        },
+        {
+            "label": "IS-A",
+            "source": "Pike",
+            "target": "Polearm"
+        },
+        {
+            "label": "IS-A",
+            "source": "Corseque",
+            "target": "Polearm"
+        },
+        {
+            "label": "IS-A",
+            "source": "Fauchard",
+            "target": "Polearm"
+        },
+        {
+            "label": "IS-A",
+            "source": "Glaive",
+            "target": "Polearm"
+        },
+        {
+            "label": "IS-A",
+            "source": "Guisarme",
+            "target": "Polearm"
+        },
+        {
+            "label": "IS-A",
+            "source": "Halberd",
+            "target": "Polearm"
+        },
+        {
+            "label": "IS-A",
+            "source": "Danish Axe",
+            "target": "Polearm"
+        },
+        {
+            "label": "IS-A",
+            "source": "Sparth",
+            "target": "Polearm"
+        },
+        {
+            "label": "IS-A",
+            "source": "Bardiche",
+            "target": "Polearm"
+        },
+        {
+            "label": "IS-A",
+            "source": "Pollaxe",
+            "target": "Polearm"
+        },
+        {
+            "label": "IS-A",
+            "source": "Modern Flanged Mace",
+            "target": "Polearm"
+        },
+        {
+            "label": "IS-A",
+            "source": "Maul",
+            "target": "Polearm"
+        },
+        {
+            "label": "IS-A",
+            "source": "Becs de Corbin",
+            "target": "Polearm"
+        },
+        {
+            "label": "IS-A",
+            "source": "Cross Bow",
+            "target": "Bow"
+        },
+        {
+            "label": "IS-A",
+            "source": "Long Bow",
+            "target": "Bow"
+        },
+        {
+            "label": "IS-A",
+            "source": "Hand Cannon",
+            "target": "Gun"
+        },
+        {
+            "label": "IS-A",
+            "source": "Arquebus",
+            "target": "Gun"
+        },
+        {
+            "label": "IS-A",
+            "source": "Stone Thrower (Pierrier)",
+            "target": "Artillery"
+        },
+        {
+            "label": "IS-A",
+            "source": "Cannon",
+            "target": "Artillery"
+        },
+        {
+            "label": "IS-A",
+            "source": "Arming Sword",
+            "target": "Sword"
+        },
+        {
+            "label": "causesDamage",
+            "source": "Arming Sword",
+            "target": "Cut"
+        },
+        {
+            "label": "causesDamage",
+            "source": "Arming Sword",
+            "target": "Bash"
+        },
+        {
+            "label": "causesDamage",
+            "source": "Arming Sword",
+            "target": "Puncture"
+        },
+        {
+            "label": "hasPart",
+            "source": "Arming Sword",
+            "target": "Pommel"
+        },
+        {
+            "label": "hasPart",
+            "source": "Arming Sword",
+            "target": "Hilt"
+        },
+        {
+            "label": "IS-A",
+            "source": "Broad Sword",
+            "target": "Sword"
+        },
+        {
+            "label": "IS-A",
+            "source": "Falchion",
+            "target": "Sword"
+        },
+        {
+            "label": "IS-A",
+            "source": "Long Sword",
+            "target": "Sword"
+        },
+        {
+            "label": "IS-A",
+            "source": "Anelace",
+            "target": "Dagger"
+        },
+        {
+            "label": "IS-A",
+            "source": "Stiletto",
+            "target": "Dagger"
+        },
+        {
+            "label": "causesDamage",
+            "source": "Stiletto",
+            "target": "Puncture"
+        },
+        {
+            "label": "eraUsed",
+            "source": "Stiletto",
+            "target": "15th Century"
+        },
+        {
+            "label": "IS-A",
+            "source": "Poingnard",
+            "target": "Dagger"
+        },
+        {
+            "label": "IS-A",
+            "source": "Rondel",
+            "target": "Dagger"
+        },
+        {
+            "label": "IS-A",
+            "source": "Traction Trebuchet",
+            "target": "Stone Thrower (Pierrier)"
+        },
+        {
+            "label": "IS-A",
+            "source": "Counterweight Trebuchet",
+            "target": "Stone Thrower (Pierrier)"
+        },
+        {
+            "label": "IS-A",
+            "source": "Onager",
+            "target": "Stone Thrower (Pierrier)"
+        },
+        {
+            "label": "IS-A",
+            "source": "Mangonel",
+            "target": "Stone Thrower (Pierrier)"
+        },
+        {
+            "label": "IS-A",
+            "source": "Ballista",
+            "target": "Stone Thrower (Pierrier)"
+        },
+        {
+            "label": "IS-A",
+            "source": "Springald",
+            "target": "Stone Thrower (Pierrier)"
+        },
+        {
+            "label": "IS-A",
+            "source": "Bombard",
+            "target": "Cannon"
+        },
+        {
+            "label": "IS-A",
+            "source": "Petard",
+            "target": "Cannon"
+        }
+    ]
+}
