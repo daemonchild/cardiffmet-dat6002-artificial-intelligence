@@ -4,13 +4,13 @@
     "graph": {},
     "nodes": [
         {
-            "id": "Melee"
+            "id": "Melee Weapon"
         },
         {
             "id": "Weapon"
         },
         {
-            "id": "Ranged"
+            "id": "Ranged Weapon"
         },
         {
             "id": "Siege Weapon"
@@ -73,6 +73,21 @@
             "id": "Knife"
         },
         {
+            "id": "Steel"
+        },
+        {
+            "id": "Pommel"
+        },
+        {
+            "id": "Hilt"
+        },
+        {
+            "id": "Blade"
+        },
+        {
+            "id": "Cut"
+        },
+        {
             "id": "Club"
         },
         {
@@ -91,7 +106,7 @@
             "id": "War Hammer"
         },
         {
-            "id": "Horseman's Pick"
+            "id": "Horsemans Pick"
         },
         {
             "id": "Quarterstaff"
@@ -175,6 +190,99 @@
             "id": "Long Sword"
         },
         {
+            "id": "1000-1350AD"
+        },
+        {
+            "id": "30-32 inches"
+        },
+        {
+            "id": "Light"
+        },
+        {
+            "id": "Knight"
+        },
+        {
+            "id": "Two Edges"
+        },
+        {
+            "id": "Thrust"
+        },
+        {
+            "id": "1600-1799"
+        },
+        {
+            "id": "Basket Hilt"
+        },
+        {
+            "id": "Substantial"
+        },
+        {
+            "id": "1350-1550AD"
+        },
+        {
+            "id": "40-48 inches"
+        },
+        {
+            "id": "Europe"
+        },
+        {
+            "id": "1.2-2.4Kg"
+        },
+        {
+            "id": "Hand-and-a-half sword"
+        },
+        {
+            "id": "Great sword"
+        },
+        {
+            "id": "Bastard sword"
+        },
+        {
+            "id": "Fullers (Blood Grooves)"
+        },
+        {
+            "id": "The Wallace Sword"
+        },
+        {
+            "id": "2.7 kg"
+        },
+        {
+            "id": "Scotland"
+        },
+        {
+            "id": "Late 13th Century"
+        },
+        {
+            "id": "1000-1500AD"
+        },
+        {
+            "id": "Mounted Knight"
+        },
+        {
+            "id": "One Edge"
+        },
+        {
+            "id": "Medici Falchion"
+        },
+        {
+            "id": "Coat of Arms of Cosimo de Medici"
+        },
+        {
+            "id": "Gold plated"
+        },
+        {
+            "id": "Florence"
+        },
+        {
+            "id": "1560"
+        },
+        {
+            "id": "Cleaver Falchion"
+        },
+        {
+            "id": "Cusped Falchion"
+        },
+        {
             "id": "Anelace"
         },
         {
@@ -185,6 +293,45 @@
         },
         {
             "id": "Rondel"
+        },
+        {
+            "id": "Puncture"
+        },
+        {
+            "id": "Knights"
+        },
+        {
+            "id": "Commoners"
+        },
+        {
+            "id": "20-30 inches"
+        },
+        {
+            "id": "1100 onwards"
+        },
+        {
+            "id": "No Edges"
+        },
+        {
+            "id": "Misericorde"
+        },
+        {
+            "id": "Germany and England"
+        },
+        {
+            "id": "Lightweight"
+        },
+        {
+            "id": "France"
+        },
+        {
+            "id": "20 inches"
+        },
+        {
+            "id": "Bash"
+        },
+        {
+            "id": "Wood"
         },
         {
             "id": "Traction Trebuchet"
@@ -209,62 +356,33 @@
         },
         {
             "id": "Petard"
-        },
-        {
-            "id": "Steel"
-        },
-        {
-            "id": "Puncture"
-        },
-        {
-            "id": "Cut"
-        },
-        {
-            "id": "Bash"
-        },
-        {
-            "id": "Pommel"
-        },
-        {
-            "id": "Hilt"
-        },
-        {
-            "id": "15th Century"
-        },
-        {
-            "id": "Wood"
         }
     ],
     "edges": [
         {
-            "label": "IS-A",
-            "source": "Melee",
+            "label": "TYPE-OF",
+            "source": "Melee Weapon",
             "target": "Weapon"
         },
         {
-            "label": "IS-A",
-            "source": "Ranged",
+            "label": "TYPE-OF",
+            "source": "Ranged Weapon",
             "target": "Weapon"
         },
         {
-            "label": "IS-A",
+            "label": "TYPE-OF",
             "source": "Siege Weapon",
             "target": "Weapon"
         },
         {
-            "label": "IS-A",
+            "label": "TYPE-OF",
             "source": "Bladed Hand Weapon",
-            "target": "Melee"
+            "target": "Melee Weapon"
         },
         {
-            "label": "primaryMaterial",
-            "source": "Bladed Hand Weapon",
-            "target": "Steel"
-        },
-        {
-            "label": "IS-A",
+            "label": "TYPE-OF",
             "source": "Blunt Hand Weapon",
-            "target": "Melee"
+            "target": "Melee Weapon"
         },
         {
             "label": "causesDamage",
@@ -277,39 +395,39 @@
             "target": "Wood"
         },
         {
-            "label": "IS-A",
+            "label": "TYPE-OF",
             "source": "Polearm",
-            "target": "Melee"
+            "target": "Melee Weapon"
         },
         {
             "label": "IS-A",
             "source": "Francisca",
-            "target": "Ranged"
+            "target": "Ranged Weapon"
         },
         {
             "label": "IS-A",
             "source": "Javelin",
-            "target": "Ranged"
+            "target": "Ranged Weapon"
         },
         {
             "label": "IS-A",
             "source": "Bow",
-            "target": "Ranged"
+            "target": "Ranged Weapon"
         },
         {
             "label": "IS-A",
             "source": "Arbalest",
-            "target": "Ranged"
+            "target": "Ranged Weapon"
         },
         {
             "label": "IS-A",
             "source": "Gun",
-            "target": "Ranged"
+            "target": "Ranged Weapon"
         },
         {
             "label": "IS-A",
             "source": "Artillery",
-            "target": "Ranged"
+            "target": "Ranged Weapon"
         },
         {
             "label": "IS-A",
@@ -352,6 +470,31 @@
             "target": "Bladed Hand Weapon"
         },
         {
+            "label": "primaryMaterial",
+            "source": "Sword",
+            "target": "Steel"
+        },
+        {
+            "label": "hasPart",
+            "source": "Sword",
+            "target": "Pommel"
+        },
+        {
+            "label": "hasPart",
+            "source": "Sword",
+            "target": "Hilt"
+        },
+        {
+            "label": "hasPart",
+            "source": "Sword",
+            "target": "Blade"
+        },
+        {
+            "label": "causesDamage",
+            "source": "Sword",
+            "target": "Cut"
+        },
+        {
             "label": "IS-A",
             "source": "Dagger",
             "target": "Bladed Hand Weapon"
@@ -360,6 +503,21 @@
             "label": "causesDamage",
             "source": "Dagger",
             "target": "Puncture"
+        },
+        {
+            "label": "hasEdges",
+            "source": "Dagger",
+            "target": "Two Edges"
+        },
+        {
+            "label": "usedBy",
+            "source": "Dagger",
+            "target": "Knights"
+        },
+        {
+            "label": "usedBy",
+            "source": "Dagger",
+            "target": "Commoners"
         },
         {
             "label": "IS-A",
@@ -408,7 +566,7 @@
         },
         {
             "label": "IS-A",
-            "source": "Horseman's Pick",
+            "source": "Horsemans Pick",
             "target": "Blunt Hand Weapon"
         },
         {
@@ -532,29 +690,29 @@
             "target": "Sword"
         },
         {
-            "label": "causesDamage",
+            "label": "eraUsed",
             "source": "Arming Sword",
-            "target": "Cut"
+            "target": "1000-1350AD"
         },
         {
-            "label": "causesDamage",
+            "label": "avgLength",
             "source": "Arming Sword",
-            "target": "Bash"
+            "target": "30-32 inches"
         },
         {
-            "label": "causesDamage",
+            "label": "avgWeight",
             "source": "Arming Sword",
-            "target": "Puncture"
+            "target": "Light"
         },
         {
-            "label": "hasPart",
+            "label": "usedBy",
             "source": "Arming Sword",
-            "target": "Pommel"
+            "target": "Knight"
         },
         {
-            "label": "hasPart",
+            "label": "hasEdges",
             "source": "Arming Sword",
-            "target": "Hilt"
+            "target": "Two Edges"
         },
         {
             "label": "IS-A",
@@ -562,9 +720,64 @@
             "target": "Sword"
         },
         {
+            "label": "causesDamage",
+            "source": "Broad Sword",
+            "target": "Thrust"
+        },
+        {
+            "label": "eraUsed",
+            "source": "Broad Sword",
+            "target": "1600-1799"
+        },
+        {
+            "label": "avgLength",
+            "source": "Broad Sword",
+            "target": "30-32 inches"
+        },
+        {
+            "label": "hasPart",
+            "source": "Broad Sword",
+            "target": "Basket Hilt"
+        },
+        {
+            "label": "avgWeight",
+            "source": "Broad Sword",
+            "target": "Substantial"
+        },
+        {
+            "label": "hasEdges",
+            "source": "Broad Sword",
+            "target": "Two Edges"
+        },
+        {
             "label": "IS-A",
             "source": "Falchion",
             "target": "Sword"
+        },
+        {
+            "label": "eraUsed",
+            "source": "Falchion",
+            "target": "1000-1500AD"
+        },
+        {
+            "label": "avgLength",
+            "source": "Falchion",
+            "target": "30-32 inches"
+        },
+        {
+            "label": "usedBy",
+            "source": "Falchion",
+            "target": "Mounted Knight"
+        },
+        {
+            "label": "hasEdges",
+            "source": "Falchion",
+            "target": "One Edge"
+        },
+        {
+            "label": "historicalOrigin",
+            "source": "Falchion",
+            "target": "Europe"
         },
         {
             "label": "IS-A",
@@ -572,9 +785,124 @@
             "target": "Sword"
         },
         {
+            "label": "causesDamage",
+            "source": "Long Sword",
+            "target": "Thrust"
+        },
+        {
+            "label": "eraUsed",
+            "source": "Long Sword",
+            "target": "1350-1550AD"
+        },
+        {
+            "label": "avgLength",
+            "source": "Long Sword",
+            "target": "40-48 inches"
+        },
+        {
+            "label": "usedBy",
+            "source": "Long Sword",
+            "target": "Knight"
+        },
+        {
+            "label": "historicalOrigin",
+            "source": "Long Sword",
+            "target": "Europe"
+        },
+        {
+            "label": "avgWeight",
+            "source": "Long Sword",
+            "target": "1.2-2.4Kg"
+        },
+        {
+            "label": "hasEdges",
+            "source": "Long Sword",
+            "target": "Two Edges"
+        },
+        {
+            "label": "alternateName",
+            "source": "Long Sword",
+            "target": "Hand-and-a-half sword"
+        },
+        {
+            "label": "alternateName",
+            "source": "Long Sword",
+            "target": "Great sword"
+        },
+        {
+            "label": "alternateName",
+            "source": "Long Sword",
+            "target": "Bastard sword"
+        },
+        {
+            "label": "hasPart",
+            "source": "Long Sword",
+            "target": "Fullers (Blood Grooves)"
+        },
+        {
+            "label": "INSTANCE-OF",
+            "source": "The Wallace Sword",
+            "target": "Long Sword"
+        },
+        {
+            "label": "averageWeight",
+            "source": "The Wallace Sword",
+            "target": "2.7 kg"
+        },
+        {
+            "label": "historicalOrigin",
+            "source": "The Wallace Sword",
+            "target": "Scotland"
+        },
+        {
+            "label": "eraUsed",
+            "source": "The Wallace Sword",
+            "target": "Late 13th Century"
+        },
+        {
+            "label": "INSTANCE-OF",
+            "source": "Medici Falchion",
+            "target": "Falchion"
+        },
+        {
+            "label": "engravedWith",
+            "source": "Medici Falchion",
+            "target": "Coat of Arms of Cosimo de Medici"
+        },
+        {
+            "label": "secondaryMaterial",
+            "source": "Medici Falchion",
+            "target": "Gold plated"
+        },
+        {
+            "label": "historicalOrigin",
+            "source": "Medici Falchion",
+            "target": "Florence"
+        },
+        {
+            "label": "usedEra",
+            "source": "Medici Falchion",
+            "target": "1560"
+        },
+        {
+            "label": "TYPE-OF",
+            "source": "Cleaver Falchion",
+            "target": "Falchion"
+        },
+        {
+            "label": "TYPE-OF",
+            "source": "Cusped Falchion",
+            "target": "Falchion"
+        },
+        {
             "label": "IS-A",
             "source": "Anelace",
             "target": "Dagger"
+        },
+        {
+            "label": "avgLength",
+            "source": "Anelace",
+            "target": "20-30 inches"
         },
         {
             "label": "IS-A",
@@ -589,7 +917,22 @@
         {
             "label": "eraUsed",
             "source": "Stiletto",
-            "target": "15th Century"
+            "target": "1100 onwards"
+        },
+        {
+            "label": "hasEdges",
+            "source": "Stiletto",
+            "target": "No Edges"
+        },
+        {
+            "label": "alternateName",
+            "source": "Stiletto",
+            "target": "Misericorde"
+        },
+        {
+            "label": "historicalOrigin",
+            "source": "Stiletto",
+            "target": "Germany and England"
         },
         {
             "label": "IS-A",
@@ -597,9 +940,29 @@
             "target": "Dagger"
         },
         {
+            "label": "avgWeight",
+            "source": "Poingnard",
+            "target": "Lightweight"
+        },
+        {
+            "label": "historicalOrigin",
+            "source": "Poingnard",
+            "target": "France"
+        },
+        {
+            "label": "eraUsed",
+            "source": "Poingnard",
+            "target": "1100 onwards"
+        },
+        {
             "label": "IS-A",
             "source": "Rondel",
             "target": "Dagger"
+        },
+        {
+            "label": "avgLength",
+            "source": "Rondel",
+            "target": "20 inches"
         },
         {
             "label": "IS-A",
