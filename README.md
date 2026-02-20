@@ -5,6 +5,24 @@ Create network, based on research.
 will need references for domain research (3 sources minimum).
 5 layrs of abstraction minimum.
 Report shoudl be about a page, showing why choices were made, and why abstraction choices were chosen... and demoing the system.
+Abstraction choices due to prperties being common --> actually becomes a node
+
+Draw a table for the semantic network by level.
+Level, Node, Properties, Parent
+Cannot have the same propeties twice on a node?
+
+Define medieval period... therefore exceptions..
+
+Discuss ethics briefly...shoudl we study thias stuff.
+
+
+
+property_of --> [list of possible atrribtes to search for], use cut to find onlythe firstr one.
+
+property_of(sword, hasEdges).
+property of(swods, is_a)... can use function in here too,.
+
+propery_of (X,Y) :- prop
 
 # Connectionist Methods
 

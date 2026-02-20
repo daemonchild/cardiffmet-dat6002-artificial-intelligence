@@ -138,3 +138,4 @@ has_prop(Node, Attr, Val) :- prop(Node, Attr, Val).
 has_prop(Node, Attr, Val) :-
     is_a(Node, Parent),
     has_prop(Parent, Attr, Val).
+
