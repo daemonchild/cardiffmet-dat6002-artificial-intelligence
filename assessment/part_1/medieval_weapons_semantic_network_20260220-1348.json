@@ -172,10 +172,13 @@
             "id": "Arquebus"
         },
         {
-            "id": "Stone Thrower (Pierrier)"
+            "id": "Stone Thrower"
         },
         {
             "id": "Cannon"
+        },
+        {
+            "id": "Pierrier"
         },
         {
             "id": "Arming Sword"
@@ -190,10 +193,10 @@
             "id": "Long Sword"
         },
         {
-            "id": "1000-1350AD"
+            "id": "1000-1350"
         },
         {
-            "id": "30-32 inches"
+            "id": "30-32"
         },
         {
             "id": "Light"
@@ -217,16 +220,16 @@
             "id": "Substantial"
         },
         {
-            "id": "1350-1550AD"
+            "id": "1350-1550"
         },
         {
-            "id": "40-48 inches"
+            "id": "40-48"
         },
         {
             "id": "Europe"
         },
         {
-            "id": "1.2-2.4Kg"
+            "id": "1.2-2.4"
         },
         {
             "id": "Hand-and-a-half sword"
@@ -244,7 +247,7 @@
             "id": "The Wallace Sword"
         },
         {
-            "id": "2.7 kg"
+            "id": "2.7"
         },
         {
             "id": "Scotland"
@@ -253,7 +256,7 @@
             "id": "Late 13th Century"
         },
         {
-            "id": "1000-1500AD"
+            "id": "1000-1500 AD"
         },
         {
             "id": "Mounted Knight"
@@ -304,10 +307,10 @@
             "id": "Commoners"
         },
         {
-            "id": "20-30 inches"
+            "id": "20-30"
         },
         {
-            "id": "1100 onwards"
+            "id": "1100-1799"
         },
         {
             "id": "No Edges"
@@ -325,7 +328,7 @@
             "id": "France"
         },
         {
-            "id": "20 inches"
+            "id": "20"
         },
         {
             "id": "Bash"
@@ -676,8 +679,13 @@
         },
         {
             "label": "IS-A",
-            "source": "Stone Thrower (Pierrier)",
+            "source": "Stone Thrower",
             "target": "Artillery"
+        },
+        {
+            "label": "alternateName",
+            "source": "Stone Thrower",
+            "target": "Pierrier"
         },
         {
             "label": "IS-A",
@@ -692,12 +700,12 @@
         {
             "label": "eraUsed",
             "source": "Arming Sword",
-            "target": "1000-1350AD"
+            "target": "1000-1350"
         },
         {
-            "label": "avgLength",
+            "label": "lengthInches",
             "source": "Arming Sword",
-            "target": "30-32 inches"
+            "target": "30-32"
         },
         {
             "label": "avgWeight",
@@ -730,9 +738,9 @@
             "target": "1600-1799"
         },
         {
-            "label": "avgLength",
+            "label": "avgLengthInches",
             "source": "Broad Sword",
-            "target": "30-32 inches"
+            "target": "30-32"
         },
         {
             "label": "hasPart",
@@ -757,12 +765,12 @@
         {
             "label": "eraUsed",
             "source": "Falchion",
-            "target": "1000-1500AD"
+            "target": "1000-1500 AD"
         },
         {
-            "label": "avgLength",
+            "label": "lengthInches",
             "source": "Falchion",
-            "target": "30-32 inches"
+            "target": "30-32"
         },
         {
             "label": "usedBy",
@@ -792,12 +800,12 @@
         {
             "label": "eraUsed",
             "source": "Long Sword",
-            "target": "1350-1550AD"
+            "target": "1350-1550"
         },
         {
-            "label": "avgLength",
+            "label": "avgLengthInches",
             "source": "Long Sword",
-            "target": "40-48 inches"
+            "target": "40-48"
         },
         {
             "label": "usedBy",
@@ -810,9 +818,9 @@
             "target": "Europe"
         },
         {
-            "label": "avgWeight",
+            "label": "weightKg",
             "source": "Long Sword",
-            "target": "1.2-2.4Kg"
+            "target": "1.2-2.4"
         },
         {
             "label": "hasEdges",
@@ -845,9 +853,9 @@
             "target": "Long Sword"
         },
         {
-            "label": "averageWeight",
+            "label": "weightKg",
             "source": "The Wallace Sword",
-            "target": "2.7 kg"
+            "target": "2.7"
         },
         {
             "label": "historicalOrigin",
@@ -900,9 +908,9 @@
             "target": "Dagger"
         },
         {
-            "label": "avgLength",
+            "label": "lengthInches",
             "source": "Anelace",
-            "target": "20-30 inches"
+            "target": "20-30"
         },
         {
             "label": "IS-A",
@@ -917,7 +925,7 @@
         {
             "label": "eraUsed",
             "source": "Stiletto",
-            "target": "1100 onwards"
+            "target": "1100-1799"
         },
         {
             "label": "hasEdges",
@@ -940,7 +948,7 @@
             "target": "Dagger"
         },
         {
-            "label": "avgWeight",
+            "label": "weight",
             "source": "Poingnard",
             "target": "Lightweight"
         },
@@ -952,7 +960,7 @@
         {
             "label": "eraUsed",
             "source": "Poingnard",
-            "target": "1100 onwards"
+            "target": "1100-1799"
         },
         {
             "label": "IS-A",
@@ -960,39 +968,39 @@
             "target": "Dagger"
         },
         {
-            "label": "avgLength",
+            "label": "lengthInches",
             "source": "Rondel",
-            "target": "20 inches"
+            "target": "20"
         },
         {
             "label": "IS-A",
             "source": "Traction Trebuchet",
-            "target": "Stone Thrower (Pierrier)"
+            "target": "Stone Thrower"
         },
         {
             "label": "IS-A",
             "source": "Counterweight Trebuchet",
-            "target": "Stone Thrower (Pierrier)"
+            "target": "Stone Thrower"
         },
         {
             "label": "IS-A",
             "source": "Onager",
-            "target": "Stone Thrower (Pierrier)"
+            "target": "Stone Thrower"
         },
         {
             "label": "IS-A",
             "source": "Mangonel",
-            "target": "Stone Thrower (Pierrier)"
+            "target": "Stone Thrower"
         },
         {
             "label": "IS-A",
             "source": "Ballista",
-            "target": "Stone Thrower (Pierrier)"
+            "target": "Stone Thrower"
         },
         {
             "label": "IS-A",
             "source": "Springald",
-            "target": "Stone Thrower (Pierrier)"
+            "target": "Stone Thrower"
         },
         {
             "label": "IS-A",
