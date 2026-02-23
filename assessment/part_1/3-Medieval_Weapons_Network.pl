@@ -1,3 +1,5 @@
+% Medieval Weapons in Prolog
+% Auto generated from SemanticNetwork Class, by Tom Rowan
 
 % is_a facts
 
