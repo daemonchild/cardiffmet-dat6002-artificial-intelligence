@@ -17,13 +17,6 @@ Discuss ethics briefly...shoudl we study thias stuff.
 
 
 
-property_of --> [list of possible atrribtes to search for], use cut to find onlythe firstr one.
-
-property_of(sword, hasEdges).
-property of(swods, is_a)... can use function in here too,.
-
-propery_of (X,Y) :- prop
-
 # Connectionist Methods
 
 Sort and work on the dataset. --> numerical data only! 

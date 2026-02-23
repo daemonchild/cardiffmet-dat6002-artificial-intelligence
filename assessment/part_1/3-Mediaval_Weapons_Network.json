@@ -1,0 +1,1016 @@
+{
+    "directed": true,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "id": "anelace"
+        },
+        {
+            "id": "dagger"
+        },
+        {
+            "id": "arbalest"
+        },
+        {
+            "id": "ranged_weapon"
+        },
+        {
+            "id": "arming_sword"
+        },
+        {
+            "id": "sword"
+        },
+        {
+            "id": "arquebus"
+        },
+        {
+            "id": "gun"
+        },
+        {
+            "id": "artillery"
+        },
+        {
+            "id": "ballista"
+        },
+        {
+            "id": "stone_thrower"
+        },
+        {
+            "id": "bardiche"
+        },
+        {
+            "id": "polearm"
+        },
+        {
+            "id": "battering_ram"
+        },
+        {
+            "id": "siege_weapon"
+        },
+        {
+            "id": "becs_de_corbin"
+        },
+        {
+            "id": "biological_weapon"
+        },
+        {
+            "id": "bladed_hand_weapon"
+        },
+        {
+            "id": "melee_weapon"
+        },
+        {
+            "id": "blunt_hand_weapon"
+        },
+        {
+            "id": "bombard"
+        },
+        {
+            "id": "cannon"
+        },
+        {
+            "id": "bow"
+        },
+        {
+            "id": "broad_sword"
+        },
+        {
+            "id": "cat"
+        },
+        {
+            "id": "chemical_weapon"
+        },
+        {
+            "id": "cleaver_falchion"
+        },
+        {
+            "id": "falchion"
+        },
+        {
+            "id": "club"
+        },
+        {
+            "id": "corseque"
+        },
+        {
+            "id": "counterweight_trebuchet"
+        },
+        {
+            "id": "cross_bow"
+        },
+        {
+            "id": "cusped_falchion"
+        },
+        {
+            "id": "danish_axe"
+        },
+        {
+            "id": "fauchard"
+        },
+        {
+            "id": "flail"
+        },
+        {
+            "id": "francisca"
+        },
+        {
+            "id": "glaive"
+        },
+        {
+            "id": "guisarme"
+        },
+        {
+            "id": "halberd"
+        },
+        {
+            "id": "hand_cannon"
+        },
+        {
+            "id": "holy_water_sprinkler"
+        },
+        {
+            "id": "horsemans_pick"
+        },
+        {
+            "id": "javelin"
+        },
+        {
+            "id": "knife"
+        },
+        {
+            "id": "lance"
+        },
+        {
+            "id": "long_bow"
+        },
+        {
+            "id": "long_sword"
+        },
+        {
+            "id": "mace"
+        },
+        {
+            "id": "mangonel"
+        },
+        {
+            "id": "maul"
+        },
+        {
+            "id": "medici_falchion"
+        },
+        {
+            "id": "weapon"
+        },
+        {
+            "id": "modern_flanged_mace"
+        },
+        {
+            "id": "morning_star"
+        },
+        {
+            "id": "onager"
+        },
+        {
+            "id": "petard"
+        },
+        {
+            "id": "pike"
+        },
+        {
+            "id": "poingnard"
+        },
+        {
+            "id": "pollaxe"
+        },
+        {
+            "id": "psychological_weapon"
+        },
+        {
+            "id": "quarterstaff"
+        },
+        {
+            "id": "rondel"
+        },
+        {
+            "id": "siege_tower"
+        },
+        {
+            "id": "sparth"
+        },
+        {
+            "id": "spear"
+        },
+        {
+            "id": "springald"
+        },
+        {
+            "id": "stiletto"
+        },
+        {
+            "id": "the_wallace_sword"
+        },
+        {
+            "id": "traction_trebuchet"
+        },
+        {
+            "id": "war_hammer"
+        },
+        {
+            "id": "weasel"
+        },
+        {
+            "id": "winged_spear"
+        },
+        {
+            "id": "20,30"
+        },
+        {
+            "id": "light"
+        },
+        {
+            "id": "1000,1350"
+        },
+        {
+            "id": "two_edges"
+        },
+        {
+            "id": "30,32"
+        },
+        {
+            "id": "knight"
+        },
+        {
+            "id": "bash"
+        },
+        {
+            "id": "wood"
+        },
+        {
+            "id": "substantial"
+        },
+        {
+            "id": "thrust"
+        },
+        {
+            "id": "1600,1799"
+        },
+        {
+            "id": "basket_hilt"
+        },
+        {
+            "id": "puncture"
+        },
+        {
+            "id": "commoners"
+        },
+        {
+            "id": "knights"
+        },
+        {
+            "id": "1000,1500,ad"
+        },
+        {
+            "id": "one_edge"
+        },
+        {
+            "id": "europe"
+        },
+        {
+            "id": "mounted_knight"
+        },
+        {
+            "id": "cut"
+        },
+        {
+            "id": "bastard_sword"
+        },
+        {
+            "id": "great_sword"
+        },
+        {
+            "id": "hand,and,a,half,sword"
+        },
+        {
+            "id": "40,48"
+        },
+        {
+            "id": "1350,1550"
+        },
+        {
+            "id": "fullers_(blood_grooves)"
+        },
+        {
+            "id": "1.2,2.4"
+        },
+        {
+            "id": "coat_of_arms_of_cosimo_de_medici"
+        },
+        {
+            "id": "florence"
+        },
+        {
+            "id": "gold_plated"
+        },
+        {
+            "id": "1560"
+        },
+        {
+            "id": "1100,1799"
+        },
+        {
+            "id": "france"
+        },
+        {
+            "id": "lightweight"
+        },
+        {
+            "id": "20"
+        },
+        {
+            "id": "misericorde"
+        },
+        {
+            "id": "no_edges"
+        },
+        {
+            "id": "germany_and_england"
+        },
+        {
+            "id": "pierrier"
+        },
+        {
+            "id": "blade"
+        },
+        {
+            "id": "hilt"
+        },
+        {
+            "id": "pommel"
+        },
+        {
+            "id": "steel"
+        },
+        {
+            "id": "late_13th_century"
+        },
+        {
+            "id": "scotland"
+        },
+        {
+            "id": "2.7"
+        }
+    ],
+    "edges": [
+        {
+            "label": "is_a",
+            "source": "anelace",
+            "target": "dagger"
+        },
+        {
+            "label": "lengthinches",
+            "source": "anelace",
+            "target": "20,30"
+        },
+        {
+            "label": "is_a",
+            "source": "dagger",
+            "target": "bladed_hand_weapon"
+        },
+        {
+            "label": "causesdamage",
+            "source": "dagger",
+            "target": "puncture"
+        },
+        {
+            "label": "hasedges",
+            "source": "dagger",
+            "target": "two_edges"
+        },
+        {
+            "label": "usedby",
+            "source": "dagger",
+            "target": "commoners"
+        },
+        {
+            "label": "usedby",
+            "source": "dagger",
+            "target": "knights"
+        },
+        {
+            "label": "is_a",
+            "source": "arbalest",
+            "target": "ranged_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "ranged_weapon",
+            "target": "weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "arming_sword",
+            "target": "sword"
+        },
+        {
+            "label": "avgweight",
+            "source": "arming_sword",
+            "target": "light"
+        },
+        {
+            "label": "eraused",
+            "source": "arming_sword",
+            "target": "1000,1350"
+        },
+        {
+            "label": "hasedges",
+            "source": "arming_sword",
+            "target": "two_edges"
+        },
+        {
+            "label": "lengthinches",
+            "source": "arming_sword",
+            "target": "30,32"
+        },
+        {
+            "label": "usedby",
+            "source": "arming_sword",
+            "target": "knight"
+        },
+        {
+            "label": "is_a",
+            "source": "sword",
+            "target": "bladed_hand_weapon"
+        },
+        {
+            "label": "causesdamage",
+            "source": "sword",
+            "target": "cut"
+        },
+        {
+            "label": "haspart",
+            "source": "sword",
+            "target": "blade"
+        },
+        {
+            "label": "haspart",
+            "source": "sword",
+            "target": "hilt"
+        },
+        {
+            "label": "haspart",
+            "source": "sword",
+            "target": "pommel"
+        },
+        {
+            "label": "primarymaterial",
+            "source": "sword",
+            "target": "steel"
+        },
+        {
+            "label": "is_a",
+            "source": "arquebus",
+            "target": "gun"
+        },
+        {
+            "label": "is_a",
+            "source": "gun",
+            "target": "ranged_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "artillery",
+            "target": "ranged_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "ballista",
+            "target": "stone_thrower"
+        },
+        {
+            "label": "is_a",
+            "source": "stone_thrower",
+            "target": "artillery"
+        },
+        {
+            "label": "alternatename",
+            "source": "stone_thrower",
+            "target": "pierrier"
+        },
+        {
+            "label": "is_a",
+            "source": "bardiche",
+            "target": "polearm"
+        },
+        {
+            "label": "is_a",
+            "source": "polearm",
+            "target": "melee_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "battering_ram",
+            "target": "siege_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "siege_weapon",
+            "target": "weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "becs_de_corbin",
+            "target": "polearm"
+        },
+        {
+            "label": "is_a",
+            "source": "biological_weapon",
+            "target": "siege_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "bladed_hand_weapon",
+            "target": "melee_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "melee_weapon",
+            "target": "weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "blunt_hand_weapon",
+            "target": "melee_weapon"
+        },
+        {
+            "label": "causesdamage",
+            "source": "blunt_hand_weapon",
+            "target": "bash"
+        },
+        {
+            "label": "primarymaterial",
+            "source": "blunt_hand_weapon",
+            "target": "wood"
+        },
+        {
+            "label": "is_a",
+            "source": "bombard",
+            "target": "cannon"
+        },
+        {
+            "label": "is_a",
+            "source": "cannon",
+            "target": "artillery"
+        },
+        {
+            "label": "is_a",
+            "source": "bow",
+            "target": "ranged_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "broad_sword",
+            "target": "sword"
+        },
+        {
+            "label": "avglengthinches",
+            "source": "broad_sword",
+            "target": "30,32"
+        },
+        {
+            "label": "avgweight",
+            "source": "broad_sword",
+            "target": "substantial"
+        },
+        {
+            "label": "causesdamage",
+            "source": "broad_sword",
+            "target": "thrust"
+        },
+        {
+            "label": "eraused",
+            "source": "broad_sword",
+            "target": "1600,1799"
+        },
+        {
+            "label": "hasedges",
+            "source": "broad_sword",
+            "target": "two_edges"
+        },
+        {
+            "label": "haspart",
+            "source": "broad_sword",
+            "target": "basket_hilt"
+        },
+        {
+            "label": "is_a",
+            "source": "cat",
+            "target": "siege_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "chemical_weapon",
+            "target": "siege_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "cleaver_falchion",
+            "target": "falchion"
+        },
+        {
+            "label": "is_a",
+            "source": "falchion",
+            "target": "sword"
+        },
+        {
+            "label": "eraused",
+            "source": "falchion",
+            "target": "1000,1500,ad"
+        },
+        {
+            "label": "hasedges",
+            "source": "falchion",
+            "target": "one_edge"
+        },
+        {
+            "label": "historicalorigin",
+            "source": "falchion",
+            "target": "europe"
+        },
+        {
+            "label": "lengthinches",
+            "source": "falchion",
+            "target": "30,32"
+        },
+        {
+            "label": "usedby",
+            "source": "falchion",
+            "target": "mounted_knight"
+        },
+        {
+            "label": "is_a",
+            "source": "club",
+            "target": "blunt_hand_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "corseque",
+            "target": "polearm"
+        },
+        {
+            "label": "is_a",
+            "source": "counterweight_trebuchet",
+            "target": "stone_thrower"
+        },
+        {
+            "label": "is_a",
+            "source": "cross_bow",
+            "target": "bow"
+        },
+        {
+            "label": "is_a",
+            "source": "cusped_falchion",
+            "target": "falchion"
+        },
+        {
+            "label": "is_a",
+            "source": "danish_axe",
+            "target": "polearm"
+        },
+        {
+            "label": "is_a",
+            "source": "fauchard",
+            "target": "polearm"
+        },
+        {
+            "label": "is_a",
+            "source": "flail",
+            "target": "blunt_hand_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "francisca",
+            "target": "ranged_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "glaive",
+            "target": "polearm"
+        },
+        {
+            "label": "is_a",
+            "source": "guisarme",
+            "target": "polearm"
+        },
+        {
+            "label": "is_a",
+            "source": "halberd",
+            "target": "polearm"
+        },
+        {
+            "label": "is_a",
+            "source": "hand_cannon",
+            "target": "gun"
+        },
+        {
+            "label": "is_a",
+            "source": "holy_water_sprinkler",
+            "target": "blunt_hand_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "horsemans_pick",
+            "target": "blunt_hand_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "javelin",
+            "target": "ranged_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "knife",
+            "target": "bladed_hand_weapon"
+        },
+        {
+            "label": "causesdamage",
+            "source": "knife",
+            "target": "cut"
+        },
+        {
+            "label": "is_a",
+            "source": "lance",
+            "target": "polearm"
+        },
+        {
+            "label": "is_a",
+            "source": "long_bow",
+            "target": "bow"
+        },
+        {
+            "label": "is_a",
+            "source": "long_sword",
+            "target": "sword"
+        },
+        {
+            "label": "alternatename",
+            "source": "long_sword",
+            "target": "bastard_sword"
+        },
+        {
+            "label": "alternatename",
+            "source": "long_sword",
+            "target": "great_sword"
+        },
+        {
+            "label": "alternatename",
+            "source": "long_sword",
+            "target": "hand,and,a,half,sword"
+        },
+        {
+            "label": "avglengthinches",
+            "source": "long_sword",
+            "target": "40,48"
+        },
+        {
+            "label": "causesdamage",
+            "source": "long_sword",
+            "target": "thrust"
+        },
+        {
+            "label": "eraused",
+            "source": "long_sword",
+            "target": "1350,1550"
+        },
+        {
+            "label": "hasedges",
+            "source": "long_sword",
+            "target": "two_edges"
+        },
+        {
+            "label": "haspart",
+            "source": "long_sword",
+            "target": "fullers_(blood_grooves)"
+        },
+        {
+            "label": "historicalorigin",
+            "source": "long_sword",
+            "target": "europe"
+        },
+        {
+            "label": "usedby",
+            "source": "long_sword",
+            "target": "knight"
+        },
+        {
+            "label": "weightkg",
+            "source": "long_sword",
+            "target": "1.2,2.4"
+        },
+        {
+            "label": "is_a",
+            "source": "mace",
+            "target": "blunt_hand_weapon"
+        },
+        {
+            "label": "causesdamage",
+            "source": "mace",
+            "target": "puncture"
+        },
+        {
+            "label": "is_a",
+            "source": "mangonel",
+            "target": "stone_thrower"
+        },
+        {
+            "label": "is_a",
+            "source": "maul",
+            "target": "polearm"
+        },
+        {
+            "label": "is_a",
+            "source": "medici_falchion",
+            "target": "falchion"
+        },
+        {
+            "label": "engravedwith",
+            "source": "medici_falchion",
+            "target": "coat_of_arms_of_cosimo_de_medici"
+        },
+        {
+            "label": "historicalorigin",
+            "source": "medici_falchion",
+            "target": "florence"
+        },
+        {
+            "label": "secondarymaterial",
+            "source": "medici_falchion",
+            "target": "gold_plated"
+        },
+        {
+            "label": "usedera",
+            "source": "medici_falchion",
+            "target": "1560"
+        },
+        {
+            "label": "is_a",
+            "source": "modern_flanged_mace",
+            "target": "polearm"
+        },
+        {
+            "label": "is_a",
+            "source": "morning_star",
+            "target": "blunt_hand_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "onager",
+            "target": "stone_thrower"
+        },
+        {
+            "label": "is_a",
+            "source": "petard",
+            "target": "cannon"
+        },
+        {
+            "label": "is_a",
+            "source": "pike",
+            "target": "polearm"
+        },
+        {
+            "label": "is_a",
+            "source": "poingnard",
+            "target": "dagger"
+        },
+        {
+            "label": "eraused",
+            "source": "poingnard",
+            "target": "1100,1799"
+        },
+        {
+            "label": "historicalorigin",
+            "source": "poingnard",
+            "target": "france"
+        },
+        {
+            "label": "weight",
+            "source": "poingnard",
+            "target": "lightweight"
+        },
+        {
+            "label": "is_a",
+            "source": "pollaxe",
+            "target": "polearm"
+        },
+        {
+            "label": "is_a",
+            "source": "psychological_weapon",
+            "target": "siege_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "quarterstaff",
+            "target": "polearm"
+        },
+        {
+            "label": "is_a",
+            "source": "rondel",
+            "target": "dagger"
+        },
+        {
+            "label": "lengthinches",
+            "source": "rondel",
+            "target": "20"
+        },
+        {
+            "label": "is_a",
+            "source": "siege_tower",
+            "target": "siege_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "sparth",
+            "target": "polearm"
+        },
+        {
+            "label": "is_a",
+            "source": "spear",
+            "target": "polearm"
+        },
+        {
+            "label": "is_a",
+            "source": "springald",
+            "target": "stone_thrower"
+        },
+        {
+            "label": "is_a",
+            "source": "stiletto",
+            "target": "dagger"
+        },
+        {
+            "label": "alternatename",
+            "source": "stiletto",
+            "target": "misericorde"
+        },
+        {
+            "label": "causesdamage",
+            "source": "stiletto",
+            "target": "puncture"
+        },
+        {
+            "label": "eraused",
+            "source": "stiletto",
+            "target": "1100,1799"
+        },
+        {
+            "label": "hasedges",
+            "source": "stiletto",
+            "target": "no_edges"
+        },
+        {
+            "label": "historicalorigin",
+            "source": "stiletto",
+            "target": "germany_and_england"
+        },
+        {
+            "label": "is_a",
+            "source": "the_wallace_sword",
+            "target": "long_sword"
+        },
+        {
+            "label": "eraused",
+            "source": "the_wallace_sword",
+            "target": "late_13th_century"
+        },
+        {
+            "label": "historicalorigin",
+            "source": "the_wallace_sword",
+            "target": "scotland"
+        },
+        {
+            "label": "weightkg",
+            "source": "the_wallace_sword",
+            "target": "2.7"
+        },
+        {
+            "label": "is_a",
+            "source": "traction_trebuchet",
+            "target": "stone_thrower"
+        },
+        {
+            "label": "is_a",
+            "source": "war_hammer",
+            "target": "blunt_hand_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "weasel",
+            "target": "siege_weapon"
+        },
+        {
+            "label": "is_a",
+            "source": "winged_spear",
+            "target": "polearm"
+        }
+    ]
+}

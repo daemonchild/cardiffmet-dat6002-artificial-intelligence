@@ -77,7 +77,7 @@ is_a( winged_spear, polearm ).
 % has_a facts
 
 has_a( anelace, lengthinches(20,30) ).
-has_a( arming_sword, weight(light) ).
+has_a( arming_sword, avgweight(light) ).
 has_a( arming_sword, eraused(1000,1350) ).
 has_a( arming_sword, hasedges(two_edges) ).
 has_a( arming_sword, lengthinches(30,32) ).
@@ -102,7 +102,7 @@ has_a( falchion, usedby(mounted_knight) ).
 has_a( knife, causesdamage(cut) ).
 has_a( long_sword, alternatename(bastard_sword) ).
 has_a( long_sword, alternatename(great_sword) ).
-has_a( long_sword, alternatename(hand_and_a_half_sword) ).
+has_a( long_sword, alternatename(hand,and,a,half,sword) ).
 has_a( long_sword, avglengthinches(40,48) ).
 has_a( long_sword, causesdamage(thrust) ).
 has_a( long_sword, eraused(1350,1550) ).
@@ -134,6 +134,7 @@ has_a( sword, primarymaterial(steel) ).
 has_a( the_wallace_sword, eraused(late_13th_century) ).
 has_a( the_wallace_sword, historicalorigin(scotland) ).
 has_a( the_wallace_sword, weightkg(2.7) ).
+% Rules (Generic for is_a, has_a semantic networks produced by Class)
 
 % Inheritance Rule - Classes
 % Base case
@@ -145,58 +146,19 @@ is_a_member(X, Y) :- is_a(X, Z), is_a_member(Z, Y).
 % Base case
 has_a_property(X, Y) :- has_a(X, Y).
 % Recursive case, allowing for exceptions (over-ridden properties)
-has_a_property(X, Y) :- is_a(X, Z), has_a_property(Z, Y).
-% has_a_property(X, Y) :- is_a(X, Z), has_a_property(Z, Y), \+ exception(X, Y).
-
-% unique properties - a weapon should only have one of these
-% If a child has one, it will replace the parent's.
-% All other properties are additive
-unique_property(weightkg).
-unique_property(hasedges).
-unique_property(lengthinches).
-unique_property(eraused).
-unique_property(historicalorigin).
-unique_property(primarymaterial).
-unique_property(secondarymaterial).
-
-
-
-% Find all properties inherited by a weapon
-% - search returned into Result variable R
-has_properties(X, R) :- findall(Y, has_a_property(X, Y), R).
+has_a_property(X, Y) :- 
+    \+ has_a(X, _),
+    is_a(X, Z), 
+    has_a_property(Z, Y).is_a(X, Z), has_a_property(Z, Y).
 
 % Finds all classes the entity belongs including itself
 is_a_member_inc_self(X, Y) :- X = Y; is_a_member(X, Y).
 
-% get everything for a weapon into two lists
+% Get everything for an entity into two lists
 get_all_for_weapon(X, Is_A_Member_Of, Has_Properties) :-
     % Collect all ancestors into Is_A_Member_Of (not sorted, showing inheritence order)
     bagof(Y, is_a_member(X, Y), Is_A_Member_Of),
     % Collect all inherited properties into Has_Properties (sorted alphabetically)
     setof(Z, has_a_property(X, Z), Has_Properties).
-
-% Base case: You have the property directly
-has_a_smart(Entity, Property) :- has_a(Entity, Property).
-
-% Recursive case: Inherit from parent ONLY if no exception exists
-has_a_smart(Entity, Property) :-
-    is_a(Entity, Parent),
-    has_a_smart(Parent, Property),
-    \+ overrides(Entity, Property). % This ensures the inheritance "breaks" here
-
-
-% A property is "overrides" if the child has a specific version of that same property type.
-% For example: hasedges(no_edges) opposes hasedges(two_edges).
-overrides(Entity, Property) :-
-    nonvar(Property),
-    Property =.. [PropName | _],      % Break property into [Name, Value]
-    ActualProperty =.. [PropName | _], % Look for another property with the same Name
-    has_a(Entity, ActualProperty),
-    Property \= ActualProperty.       % Ensure it's not the exact same fact
-
-
-get_weapon_profile(Entity, TypeOf, HasProperties) :-
-    findall(Class, is_a_member(Entity, Class), TypeOf),
-    (setof(Prop, has_a_smart(Entity, Prop), HasProperties) ; HasProperties = []).
 
 
