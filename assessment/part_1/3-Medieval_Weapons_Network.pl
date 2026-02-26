@@ -200,6 +200,7 @@ is_a_member(X, Y) :- is_a(X, Z), is_a_member(Z, Y).
 
 is_a_member(X, Y) :-
     is_a(X, Y).
+
 is_a_member(X, Y) :-
     is_a(X, Z),
     is_a_member(Z, Y).
@@ -209,7 +210,7 @@ has_a_property(Weapon, Property) :-
     setof(P, find_raw_prop(Weapon, P), AllProps),
     member(Property, AllProps).
 
-% 3. Helper to find props (this is where the logic lives)
+
 find_raw_prop(Weapon, Property) :-
     has_a(Weapon, Property).
 
