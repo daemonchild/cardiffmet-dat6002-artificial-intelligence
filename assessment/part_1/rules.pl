@@ -1,40 +1,82 @@
 
 % Rules (Generic for is_a, has_a semantic networks produced by Class)
 
-% Inheritance Rule - Classes
+% Inheritance Rule - IS-A
 
+% Rule: is_a_member/2
 % Base case
-is_a_member(X, Y) :- is_a(X, Y).
+is_a_member(Item, Class) :- 
+    is_a(Item, Class).
 
 % Recursive case
-is_a_member(X, Y) :- is_a(X, Z), is_a_member(Z, Y).
+is_a_member(Item, Class) :- 
+    is_a(Item, Parent), 
+    is_a_member(Parent, Class).
 
-% Inheritance Rule - Properties
 
-has_a_property(Weapon, Property) :-
-    % Collect all unique properties found through the hierarchy
-    setof(P, find_raw_prop(Weapon, P), AllProps),
-    member(Property, AllProps).
+% Inheritance Rule - HAS-A Properties 
 
-% 3. Helper to find props (this is where the logic lives)
-find_raw_prop(Weapon, Property) :-
-    has_a(Weapon, Property).
+% Rule: has_a_property/3
+% Base Case
+has_a_property(Item, Property, Value) :-
+    has_a(Item, Property, Value).
 
-find_raw_prop(Weapon, Property) :-
-    is_a_member(Weapon, Ancestor),
-    has_a(Ancestor, Property),
-    % Extract name to check for local overrides
-    functor(Property, Name, Arity),
-    functor(Pattern, Name, Arity),
-    \+ has_a(Weapon, Pattern).
+% Recursive Case
+has_a_property(Item, Property, Value) :-
+    is_a(Item, Class),                          % Check Class membership
+    has_a_property(Class, Property, Value),     % Check parent class for properties
+    \+ has_a(Item, Property, _).                % Allow overrides
+    
 
-% Finds all classes the entity belongs including itself
-is_a_member_inc_self(X, Y) :- X = Y; is_a_member(X, Y).
+% Rule: list_properties/1
+% Display the output in a pretty way :-)
+list_properties(Item) :-
+    % Collect all A-B pairs into a list (https://www.swi-prolog.org/pldoc/man?predicate=findall/3)
+    findall(A-B, has_a_property(Item, A, B), List),
+    % Sort this list (https://www.swi-prolog.org/pldoc/man?predicate=sort/2)
+    sort(List, SortedList),
+    % Print the output header (https://www.swi-prolog.org/pldoc/man?predicate=format/2)
+    format('Properties for ~w:~n', [Item]),
+    write('----------------------------------------'), nl,
+    % Print each line of output 
+    forall(member(A-B, SortedList), format('- ~w = ~w~n', [A, B])).
 
-% Get everything for an entity, store in two lists
-get_all_for_entity(X, Is_A_Member_Of, Has_Properties) :-
-    % Collect all ancestors into Is_A_Member_Of (not sorted, showing inheritence order)
-    bagof(Y, is_a_member(X, Y), Is_A_Member_Of),
-    % Collect all inherited properties into Has_Properties (sorted alphabetically)
-    setof(Z, has_a_property(X, Z), Has_Properties).
 
+
+% Rule: get_all_possible_properties/2
+% Get all possible property types for an object
+% Returns a list
+get_all_possible_properties(Item, SortedList) :-
+    %Collect all occurrences of Property (P) from the facts and parents
+    findall(P, has_a_property(Item, P, _), List),    
+    % Sort this list
+    sort(List, SortedList).
+
+% Rule: get_all_possible_properties/1
+% Get all possible property types in the network
+% Returns a list
+get_all_possible_properties(SortedList) :-
+    %Collect all occurrences of Property (P) from the facts
+    findall(P, has_a(_, P, _), List),    
+    % Sort this list
+    sort(List, SortedList).
+
+
+% Rule: list_all_possible_properties/1
+% List all possible properties for an item pretty way
+% Includes inherited ones
+list_all_possible_properties(Item) :-
+    get_all_possible_properties(Item, List),
+    format('All properties for ~w:~n', [Item]),
+    write('----------------------------------------'), nl,
+    forall(member(Property, List), format('- ~w~n', [Property])).
+
+
+% Rule: list_all_possible_properties/0
+% List all possible properties in the network in a pretty way
+% Should be functionally the same as `cat prolog_file.pl | grep -e '^has_a(' | cut -f 2 -d "," | tr -d " " | sort -u`
+list_all_possible_properties :-
+    get_all_possible_properties(List),
+    format('All properties defined in the network:~n'),
+    write('----------------------------------------'), nl,
+    forall(member(Property, List), format('- ~w~n', [Property])).
