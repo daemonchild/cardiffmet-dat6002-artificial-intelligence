@@ -11,13 +11,6 @@ is_a_member(X, Y) :- is_a(X, Z), is_a_member(Z, Y).
 
 % Inheritance Rule - Properties
 
-
-is_a_member(X, Y) :-
-    is_a(X, Y).
-is_a_member(X, Y) :-
-    is_a(X, Z),
-    is_a_member(Z, Y).
-
 has_a_property(Weapon, Property) :-
     % Collect all unique properties found through the hierarchy
     setof(P, find_raw_prop(Weapon, P), AllProps),

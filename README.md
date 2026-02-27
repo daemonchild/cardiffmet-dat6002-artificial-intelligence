@@ -13,7 +13,19 @@ Cannot have the same propeties twice on a node?
 
 Define medieval period... therefore exceptions..
 
-Discuss ethics briefly...shoudl we study thias stuff.
+Discuss ethics briefly...shoudl we study thias stuff? weapons are bad, right?
+Historical facts.
+What other knowledge base cold eb used for this task?
+
+mention close world assumptions.
+use word: plausible over possible.   possible is less certain than plausible.
+
+
+
+Mention deductive, inductive and abducttive..
+Ded and Ind --> monotonic
+abductive --> non-monotonic. (discuss these concepts too)
+
 
 
 
