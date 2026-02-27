@@ -52,6 +52,7 @@ get_all_possible_properties(Item, SortedList) :-
     % Sort this list
     sort(List, SortedList).
 
+
 % Rule: get_all_possible_properties/1
 % Get all possible property types in the network
 % Returns a list
