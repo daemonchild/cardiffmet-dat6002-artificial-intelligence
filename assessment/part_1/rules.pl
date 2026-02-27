@@ -75,8 +75,12 @@ list_all_possible_properties(Item) :-
 % Rule: list_all_possible_properties/0
 % List all possible properties in the network in a pretty way
 % Should be functionally the same as `cat prolog_file.pl | grep -e '^has_a(' | cut -f 2 -d "," | tr -d " " | sort -u`
+% Also counts the total (equivalent to | wc)
 list_all_possible_properties :-
     get_all_possible_properties(List),
+    length(List, Count),
     format('All properties defined in the network:~n'),
     write('----------------------------------------'), nl,
-    forall(member(Property, List), format('- ~w~n', [Property])).
+    forall(member(Property, List), format('- ~w~n', [Property])),
+    nl,
+    format('Total: ~w~n', [Count]).
