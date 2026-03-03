@@ -30,15 +30,15 @@ abductive --> non-monotonic. (discuss these concepts too)
 # Report: Semantic Network Design for Medieval Weaponry
 ## Structural Design and Abstraction
 
-The semantic network was constructed using a hierarchical classification system, grouping items by shared physical properties and tactical functions. By defining nodes such as 'bladed_hand_weapon', the network utilises shared inheritance. Each class below this (for exmaple: 'sword' or 'dagger') automatically inherits base properties like 'has_part(blade)'. This reduces redundancy and follows taxonomical classification found in zoology. As noted by Campbell, Reece and Mitchell (2017), biological classification serves to group organisms into nested ranks based on shared ancestral traits.
+The semantic network was constructed using a hierarchical classification system, grouping items by shared physical properties and tactical functions. By defining nodes such as 'bladed_hand_weapon', the network utilises shared inheritance. Each class below this (for exmaple: 'sword' or 'dagger') automatically inherits base properties like 'has_part(blade)'. This reduces redundancy and follows the  taxonomical classification found in zoology. As noted by Campbell, Reece and Mitchell (2017), biological classification groups organisms based on shared ancestral traits.
 
-However, a significant design challenge emerged in this design regarding whether to use multiple inheritance. While a tree structure works for most weapons, certain items are not simple toi categorise. A trebuchet functions both as a siege_weapon and a ranged_weapon.
+However, a challenge emerged in this design regarding whether to use multiple inheritance. While a tree structure works for most weapons, certain items are not simple to categorise. A trebuchet functions both as a siege_weapon and a ranged_weapon.
 
-The current structure uses a strict tree without multiple inheritence. It is noted that to fully capture the trebuchet, the tree would have to be modified allowing a single node to inherit properties from multiple parents. This highlights the trade-off between the simplicity of a tree and the enhanced representation allowed for by a Directed Acyclic Graph (DAG).
+The current structure uses a strict tree without multiple inheritence. It is noted that to fully capture the trebuchet, the tree would have to be modified allowing a single node to inherit properties from multiple parents. This highlights the difference between the simplicity of a tree and the enhanced representation allowed for by a Directed Acyclic Graph (DAG).
 
 ## The Medieval Framework
 
-In this context, the "Medieval Period" is defined as spanning from the Fall of the Western Roman Empire (c. 476 AD) to the beginning of the Renaissance Period (c. 1500 AD).
+In this context, the "Medieval Period" is defined as spanning from the Fall of the Western Roman Empire in 476 AD to the beginning of the Renaissance Period 1500 AD.
 
 Defining this temporal window is essential for data integrity. It allows us to apply a filter on the era_used property, ensuring that the knowledgebase remains historically anchored. It distinguishes between weapons that are conceptually possible (e.g., a modern firearm in a medieval setting) and those that are historically plausible within the dataset.
 Logical Constraints: CWA and Plausibility
@@ -60,6 +60,11 @@ Humans are able to understand the historical contect of this dataset, whereas AI
 ## References
 
 Campbell, N.A., Reece, J.B. et al, (2005) Biology. 7th edn. Harlow: Pearson. (Available at: https://cssplatformbytha.com/wp-content/uploads/2024/10/Biology-by-Neil-A.-Campbell-Jane-B.-Reece-z-lib.org_.pdf)
+
+
+
+https://resources.metmuseum.org/resources/metpublications/pdf/Arms_and_Armor_Permanent_Collection_The_Metropolitan_Museum_of_Art_Bulletin_v_49_no_1_Summer_1991.pdf
+
 
 # Connectionist Methods
 
