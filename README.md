@@ -36,14 +36,9 @@ However, a challenge emerged in this design regarding whether to use multiple in
 
 The current structure uses a strict tree without multiple inheritence. It is noted that to fully capture the trebuchet, the tree would have to be modified allowing a single node to inherit properties from multiple parents. This highlights the difference between the simplicity of a tree and the enhanced representation allowed for by a Directed Acyclic Graph (DAG).
 
-## The Medieval Framework
+For the purposes of this project, the "Medieval Period" is defined styarting with the fall of the Roman Empire in 476 AD to the beginning of the Renaissance Period 1500 AD. This ensures that the knowledgebase remains historically factual.
 
-In this context, the "Medieval Period" is defined as spanning from the Fall of the Western Roman Empire in 476 AD to the beginning of the Renaissance Period 1500 AD.
-
-Defining this temporal window is essential for data integrity. It allows us to apply a filter on the era_used property, ensuring that the knowledgebase remains historically anchored. It distinguishes between weapons that are conceptually possible (e.g., a modern firearm in a medieval setting) and those that are historically plausible within the dataset.
-Logical Constraints: CWA and Plausibility
-
-The system relies on the Closed World Assumption (CWA), a fundamental tenet of Prolog. Under CWA, any statement that cannot be proven true within the knowledgebase is assumed to be false. If has_a(trebuchet, steel_gears, true) is not asserted, the system concludes it is false.
+The system relies on the Closed World Assumption (CWA), a fundamental tenet of Prolog. Under CWA, any statement that cannot be proven true within the knowledgebase is assumed to be false. For example, as has_a(sword, colour, pink) is not specifcally stated, and cannot be inherited from a parent, Prolog will conclude that this is False.
 
 This assumption demands rigorous completeness; the accuracy of the system is entirely dependent on the quality of the input. However, it provides a clean mechanism for distinguishing plausible facts from merely possible ones. "Possible" refers to any logical property we might invent, whereas "plausible" refers to the subset of properties verified by historical evidence and stored as facts. The CWA ensures that our inference engine operates strictly within this verified, plausible reality, preventing the model from hallucinating or defaulting to ungrounded assumptions.
 Conclusion
