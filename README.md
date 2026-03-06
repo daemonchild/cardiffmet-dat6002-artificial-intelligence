@@ -61,6 +61,10 @@ Campbell, N.A., Reece, J.B. et al, (2005) Biology. 7th edn. Harlow: Pearson. (Av
 https://resources.metmuseum.org/resources/metpublications/pdf/Arms_and_Armor_Permanent_Collection_The_Metropolitan_Museum_of_Art_Bulletin_v_49_no_1_Summer_1991.pdf
 
 
+
+Things to add --> ask about era, ask about weights... 
+
+
 # Connectionist Methods
 
 Sort and work on the dataset. --> numerical data only! 
@@ -74,6 +78,21 @@ multilayer perceptron...
 
 Justify why we choose the metrics we chose for evaluation of the NN
 Justify why chose the particular activation function etc etc... design choices.
+
+sigmoid function may not find the global minimum... may descend into the local minimum
+bi-polar sigmoid function
+
+**should try sveeral, preferably three or four different: sigmoid, bp-sigmoid,. relu, tanh, etc etc)
+** need to create measures to ensure that we are comparing the output - fitness function.
+Build a class that can provide several. :-)
+
+- early stopping.
+- dynamic alpha which increases over time
+- memory of previous best try, based on fitting function? (advanced version!)
+
+vanishing and exploding gradient
+
+
 
 Some good stuff for the report in the slides!
 
@@ -106,6 +125,7 @@ loss function is needed.
 
 the bigger the weight, the more that previous neuron contributed to the error.
 error x weight = weighted error
+
 
 
 
