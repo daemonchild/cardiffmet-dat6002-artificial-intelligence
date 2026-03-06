@@ -127,6 +127,8 @@ the bigger the weight, the more that previous neuron contributed to the error.
 error x weight = weighted error
 
 
+cross-entropy-loss - classifications
+mse - for binary output
 
 
 
