@@ -75,6 +75,38 @@ multilayer perceptron...
 Justify why we choose the metrics we chose for evaluation of the NN
 Justify why chose the particular activation function etc etc... design choices.
 
+Some good stuff for the report in the slides!
+
+alpha 0.01 to 0.02 (learning rate)
+use transpose of the weights 
+cols x rows size for matrix
+dot product.
+
+
+simple perceptron can solve ve linearly separable problems (and or or)
+cannot solve non-linear prblems like Xor
+
+
+activiation function u >= Z is a step function
+
+for nonlinear functions we need a derivative function.\
+
+"fully connected network" --> every output to every input on the next layer.
+feed forward only connected to the next layer - not each other
+
+MLP -- feedforward with one or more hidden layers
+
+loss is needed over simple error... loss is a function of error.
+MSE - mean square error
+1/n (y'-y)^2.   or   absolute error |y'-y|
+
+raw error is no good becauser the errors could cancel out when averaged --> end up with zero error!
+error is used, but not directly.
+loss function is needed.
+
+the bigger the weight, the more that previous neuron contributed to the error.
+error x weight = weighted error
+
 
 
 
