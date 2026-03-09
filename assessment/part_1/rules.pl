@@ -102,7 +102,7 @@ list_all_with_property(Prop, Value) :-
 
 
 % Draws a nice tree from a given root position
-% show_tree_levels(weapon).
+% show_tree(weapon).
 %-- weapon
 %   -- melee_weapon
 %      -- bladed_hand_weapon
