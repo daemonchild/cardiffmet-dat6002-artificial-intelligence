@@ -1,4 +1,4 @@
-% Medieval Weapons Semantic Network in Prolog
+% A Semantic Network in Prolog
 % Auto generated from SemanticNetwork Class, by Tom Rowan
 
 % is_a facts
@@ -27,9 +27,9 @@ is_a( dagger, bladed_hand_weapon ).
 is_a( knife, bladed_hand_weapon ).
 is_a( sword, bladed_hand_weapon ).
 is_a( club, blunt_hand_weapon ).
-is_a( mace, blunt_hand_weapon ).
 is_a( flail, blunt_hand_weapon ).
 is_a( horsemans_pick, blunt_hand_weapon ).
+is_a( mace, blunt_hand_weapon ).
 is_a( cross_bow, bow ).
 is_a( long_bow, bow ).
 is_a( arquebus, gun ).
@@ -424,7 +424,6 @@ has_a( wallace_collection_morning_star, era_used,(1500,1600) ).
 has_a( wallace_collection_morning_star, primary_material,steel ).
 has_a( wallace_collection_morning_star, secondary_material,(gold,silver) ).
 has_a( wallace_collection_morning_star, use_case,ceremonial ).
-has_a( weapon, era_used,(476,1500) ).
 has_a( winged_spear, alternate_name,barred_spear ).
 has_a( winged_spear, has_part,head ).
 has_a( winged_spear, has_part,shaft ).
