@@ -97,7 +97,7 @@
             "id": "throwable"
         },
         {
-            "id": "500-800"
+            "id": "500,800"
         },
         {
             "id": "axe_head"
@@ -286,7 +286,7 @@
             "id": "romans"
         },
         {
-            "id": "118-157"
+            "id": "118,157"
         },
         {
             "id": "maul"
@@ -310,7 +310,7 @@
             "id": "geldon"
         },
         {
-            "id": "120-240"
+            "id": "120,240"
         },
         {
             "id": "quarterstaff"
@@ -1014,7 +1014,7 @@
         {
             "label": "era_used",
             "source": "francisca",
-            "target": "500-800"
+            "target": "500,800"
         },
         {
             "label": "has_part",
@@ -1639,7 +1639,7 @@
         {
             "label": "length_inches",
             "source": "lance",
-            "target": "118-157"
+            "target": "118,157"
         },
         {
             "label": "used_by",
@@ -1719,7 +1719,7 @@
         {
             "label": "length_inches",
             "source": "pike",
-            "target": "120-240"
+            "target": "120,240"
         },
         {
             "label": "primary_material",

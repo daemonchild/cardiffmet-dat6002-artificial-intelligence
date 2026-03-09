@@ -85,3 +85,64 @@ list_all_possible_properties :-
     forall(member(Property, List), format('- ~w~n', [Property])),
     nl,
     format('Total: ~w~n', [Count]).
+
+
+% Rule: get_all_with_property/3
+% Finds all items that have a specific property-value pair (including inherited)
+get_all_with_property(Prop, Value, Item) :-
+    has_a_property(Item, Prop, Value).
+
+% Pretty-print version
+list_all_with_property(Prop, Value) :-
+    findall(Item, get_all_with_property(Prop, Value, Item), List),
+    sort(List, Sorted),
+    format('Entities with ~w = ~w:~n', [Prop, Value]),
+    write('----------------------------------------'), nl,
+    forall(member(I, Sorted), format('- ~w~n', [I])).
+
+
+% Draws a nice tree from a given root position
+% show_tree_levels(weapon).
+%-- weapon
+%   -- melee_weapon
+%      -- bladed_hand_weapon
+%         -- dagger
+%            -- anelace
+
+% Rule: show_tree/1
+% Usage: show_tree(weapon).
+show_tree(Root) :- 
+    show_tree(Root, 0).
+
+% Recursive tree drawing
+show_tree(Item, Depth) :-
+    Indent is Depth * 3,
+    tab(Indent), 
+    format('-- ~w~n', [Item]),
+    NewDepth is Depth + 1,
+    % Find all children and recursively print them
+    forall(is_a(Child, Item), show_tree(Child, NewDepth)).
+
+
+% Rule: is_in_era/2
+% Success if Year falls within the Era defined for the Item
+is_in_era(Item, Year) :-
+    has_a_property(Item, era_used, Era),
+    check_year(Year, Era).
+
+% Case A: Exact Match (e.g., has_a(almace, era_used, 778))
+check_year(Year, Year) :- 
+    number(Year).
+
+% Case B: Range Match (e.g., has_a(arbalest, era_used, (1300, 1500)))
+check_year(Year, (Start, End)) :- 
+    Year >= Start, 
+    Year =< End.
+
+% Main Query: Find all weapons used in a specific year
+list_weapons_by_year(Year) :-
+    findall(Item, is_in_era(Item, Year), List),
+    sort(List, Sorted),
+    format('Weapons active in the year ~w:~n', [Year]),
+    write('----------------------------------------'), nl,
+    forall(member(I, Sorted), format('- ~w~n', [I])).
