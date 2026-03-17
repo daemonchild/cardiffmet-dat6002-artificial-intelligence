@@ -124,6 +124,7 @@ show_tree(Item, Depth) :-
     forall(is_a(Child, Item), show_tree(Child, NewDepth)).
 
 
+
 % Rule: is_in_era/2
 % Success if Year falls within the Era defined for the Item
 is_in_era(Item, Year) :-
