@@ -463,6 +463,31 @@ has_a_property(Item, Property, Value) :-
     \+ has_a(Item, Property, _).                % Allow overrides
     
 
+% Rule: list_all_possible_properties/0
+% List all possible properties in the network in a pretty way
+% Should be functionally the same as `cat prolog_file.pl | grep -e '^has_a(' | cut -f 2 -d "," | tr -d " " | sort -u`
+% Also counts the total (equivalent to | wc)
+list_all_possible_weapons :-
+    get_all_possible_weapons(List),
+    length(List, Count),
+    format('All weapons defined in the network:~n'),
+    write('----------------------------------------'), nl,
+    forall(member(Weapon, List), format('- ~w~n', [Weapon])),
+    nl,
+    format('Total: ~w~n', [Count]).
+
+% Rule: get_all_possible_properties/1
+% Get all possible property types in the network
+% Returns a list
+get_all_possible_weapons(SortedList) :-
+    %Collect all occurrences of Property (P) from the facts
+    findall(Weapon, is_a(Weapon, _), List),    
+    % Sort this list
+    sort(List, SortedList).
+
+
+
+
 % Rule: list_properties/1
 % Display the output in a pretty way :-)
 list_properties(Item) :-
@@ -537,7 +562,7 @@ list_all_with_property(Prop, Value) :-
 
 
 % Draws a nice tree from a given root position
-% show_tree_levels(weapon).
+% show_tree(weapon).
 %-- weapon
 %   -- melee_weapon
 %      -- bladed_hand_weapon
@@ -549,20 +574,21 @@ list_all_with_property(Prop, Value) :-
 show_tree(Root) :- 
     show_tree(Root, 0).
 
-% Recursive tree drawing
+% Recursive tree with levels shown in brackets
 show_tree(Item, Depth) :-
     Indent is Depth * 3,
     tab(Indent), 
-    format('-- ~w~n', [Item]),
+    format('-- ~w [~w]~n', [Item, Depth]),
     NewDepth is Depth + 1,
     % Find all children and recursively print them
     forall(is_a(Child, Item), show_tree(Child, NewDepth)).
 
 
+
 % Rule: is_in_era/2
 % Success if Year falls within the Era defined for the Item
-is_in_era(Item, Year) :-
-    has_a_property(Item, era_used, Era),
+is_in_era(Weapon, Year) :-
+    has_a_property(Weapon, era_used, Era),
     check_year(Year, Era).
 
 % Case A: Exact Match (e.g., has_a(almace, era_used, 778))
@@ -574,10 +600,27 @@ check_year(Year, (Start, End)) :-
     Year >= Start, 
     Year =< End.
 
-% Main Query: Find all weapons used in a specific year
+% Main Query: Find all weapons in use in a specific year
 list_weapons_by_year(Year) :-
-    findall(Item, is_in_era(Item, Year), List),
-    sort(List, Sorted),
+    findall(Weapon, is_in_era(Item, Year), List),
+    sort(List, SortedList),
     format('Weapons active in the year ~w:~n', [Year]),
     write('----------------------------------------'), nl,
-    forall(member(I, Sorted), format('- ~w~n', [I])).
+    forall(member(I, SortedList), format('- ~w~n', [I])).
+
+
+% Weights Higher number = longer range
+range_to_weight(long, 3).
+range_to_weight(medium, 2).
+range_to_weight(short, 1).
+range_to_weight(close_quarters, 0).
+
+% Compare two weapons based on range
+longer_range(Weapon1, Weapon2) :-
+    has_a_property(Weapon1, effective_range, Value1),
+    has_a_property(Weapon2, effective_range, Value2),
+    % Get weights for each
+    range_to_weight(Value1, Rank1),     
+    range_to_weight(Value2, Rank2),
+    % Compare
+    Rank1 > Rank2.  

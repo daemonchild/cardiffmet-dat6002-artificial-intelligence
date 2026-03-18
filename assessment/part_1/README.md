@@ -149,3 +149,17 @@ list_weapons_by_year(Year) :-
     format('Weapons active in the year ~w:~n', [Year]),
     write('----------------------------------------'), nl,
     forall(member(I, Sorted), format('- ~w~n', [I])).
+
+% Weights Higher number = longer range
+range_weight(long, 3).
+range_weight(medium, 2).
+range_weight(short, 1).
+range_weight(close_quarters, 0).
+
+% Compare two weapons based on range
+longer_range(W1, W2) :-
+    has_a_property(W1, effective_range, Type1),
+    has_a_property(W2, effective_range, Type2),
+    range_weight(Type1, Rank1),
+    range_weight(Type2, Rank2),
+    Rank1 > Rank2.
