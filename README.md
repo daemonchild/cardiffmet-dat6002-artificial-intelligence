@@ -97,4 +97,53 @@ mse - for binary output
 
 
 
+data split into three parts: train, validation and test (folds)
+80% training/val, 20% testing
+
+epochs - too many = overfit, too few = underfitting
+see slides
+
+va;idation stage is used to modify hyper parameters NOT model parameters
+records a 'running average' - cooling factor/patience (this avoids effects of noise)
+---> gives early stopping point
+
+
+assessment dataset - which features are we going to use?
+Feature extraction: 
+- encode (one-hot) categorical data
+- then normalise (0.00 to 1.00) (-1 to +1 bipolar data)
+- min-max-scaler. (write your own for assessment - see the slides for forumla)
+- (value - min) / (max - value)
+- can use numpy
+
+** if we do, or do not, do validation --> explain rationale for choice
+
+Build the confusion matrix manually in code
+
+Calculate accuracy - see slide
+Accuracy can be misleading if the dataset is not balanced. If it is skewed, it can be a poor measure.
+The domain in which we are operating shows which output is more important -- FN for covid 19 detection
+WHat is the important measure in the dataset in the assessment? Better to not give a loan, than risk the default? Maybe! (Citation?)
+
+Calculate precision -- used in fault critical situations
+
+Calcuate recall - when is recall more imoportant? information retrieval situations - look this up and comment.
+
+Calculate F-Score.  a better choice when the dataset is imbalanced 
+
+Calculate AUC maybe? definitely research as he didn't go into it.
+
+
+Insufficient data leads to an underfitting models, so...
+K-Fold... 5-Fold or 10-Fold common
+F1 to F5... use one fold for validation, the rest for training. Swap which one. each fold (n-1) times for training and ONCE for validation.
+(Grid search-CV uses this).
+
+
+
+
+
+
+
+
 
