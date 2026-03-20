@@ -43,6 +43,7 @@ multilayer perceptron...
 
 Justify why we choose the metrics we chose for evaluation of the NN
 Justify why chose the particular activation function etc etc... design choices.
+Justify and explain the choce of normlisation etc.
 
 sigmoid function may not find the global minimum... may descend into the local minimum
 bi-polar sigmoid function
@@ -141,6 +142,15 @@ F1 to F5... use one fold for validation, the rest for training. Swap which one. 
 
 
 
+REad the docs for scikit learn to understand and note on the defaults that are in use for each layer. eg ourput later uses a differnet activastion function than te hidden layers.
+
+Make saure everything is the same for the comparison between the two.
+You can also compare different artcitectures when using thw scikit learn librarym,, this would be extra marks.
+
+Need to discuss why did or didn't use sgd or other optimisers.
+
+adamax might be useful as a large dataset (45K).
+see slides
 
 
 
