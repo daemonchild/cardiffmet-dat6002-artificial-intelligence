@@ -235,8 +235,8 @@ Find all weapons in use in a specific year. This function uses three helper func
 Returns True if Year falls within the Era defined for the weapon:
 
     is_in_era(Weapon, Year) :-
-    has_a_property(Weapon, era_used, Era),
-    check_year(Year, Era).
+    		has_a_property(Weapon, era_used, Era),
+    		check_year(Year, Era).
 
  
 Exact match case, for example `has_a(almace, era_used, 778)`
