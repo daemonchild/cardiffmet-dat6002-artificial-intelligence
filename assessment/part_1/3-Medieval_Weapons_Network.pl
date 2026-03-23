@@ -461,31 +461,55 @@ has_a_property(Item, Property, Value) :-
     is_a(Item, Class),                          % Check Class membership
     has_a_property(Class, Property, Value),     % Check parent class for properties
     \+ has_a(Item, Property, _).                % Allow overrides
-    
 
-% Rule: list_all_possible_properties/0
-% List all possible properties in the network in a pretty way
-% Should be functionally the same as `cat prolog_file.pl | grep -e '^has_a(' | cut -f 2 -d "," | tr -d " " | sort -u`
+
+
+% Rule: list_all_items/0
+% List all items in the network in a pretty way
+% Should be functionally the same as `cat prolog_file.pl | grep -e '^is_a(' | cut -f 2 -d "," | tr -d " " | sort -u`
 % Also counts the total (equivalent to | wc)
-list_all_possible_weapons :-
-    get_all_possible_weapons(List),
+list_all_items :-
+    get_all_items(List),
     length(List, Count),
-    format('All weapons defined in the network:~n'),
+    format('All items defined in the network:~n'),
     write('----------------------------------------'), nl,
-    forall(member(Weapon, List), format('- ~w~n', [Weapon])),
+    forall(member(Item, List), format('- ~w~n', [Item])),
     nl,
     format('Total: ~w~n', [Count]).
+
+
+% Rule: get_all_items/1
+% Get all possible items in the network
+% Returns a list
+get_all_items(SortedList) :-
+    %Collect all occurrences of Item from the facts
+    findall(Item, is_a(Item, _), List),    
+    % Sort this list (deduplicates)
+    sort(List, SortedList).
+
+
+% Rule: list_all_attributes/0
+% List all possible attributes in the network in a pretty way
+% Should be functionally the same as `cat prolog_file.pl | grep -e '^has_a(' | cut -f 2 -d "," | tr -d " " | sort -u`
+% Also counts the total (equivalent to | wc)
+list_all_attributes :-
+    get_all_attributes(List),
+    length(List, Count),
+    format('All attributes defined in the network:~n'),
+    write('----------------------------------------'), nl,
+    forall(member(Attribute, List), format('- ~w~n', [Attribute])),
+    nl,
+    format('Total: ~w~n', [Count]).
+
 
 % Rule: get_all_possible_properties/1
 % Get all possible property types in the network
 % Returns a list
-get_all_possible_weapons(SortedList) :-
+get_all_attributes(SortedList) :-
     %Collect all occurrences of Property (P) from the facts
-    findall(Weapon, is_a(Weapon, _), List),    
+    findall(Attribute, has_a(_, Attribute, _), List),    
     % Sort this list
     sort(List, SortedList).
-
-
 
 
 % Rule: list_properties/1
@@ -503,60 +527,13 @@ list_properties(Item) :-
 
 
 
-% Rule: get_all_possible_properties/2
-% Get all possible property types for an object
-% Returns a list
-get_all_possible_properties(Item, SortedList) :-
-    %Collect all occurrences of Property (P) from the facts and parents
-    findall(P, has_a_property(Item, P, _), List),    
-    % Sort this list
-    sort(List, SortedList).
-
-
-% Rule: get_all_possible_properties/1
-% Get all possible property types in the network
-% Returns a list
-get_all_possible_properties(SortedList) :-
-    %Collect all occurrences of Property (P) from the facts
-    findall(P, has_a(_, P, _), List),    
-    % Sort this list
-    sort(List, SortedList).
-
-
-% Rule: list_all_possible_properties/1
-% List all possible properties for an item pretty way
-% Includes inherited ones
-list_all_possible_properties(Item) :-
-    get_all_possible_properties(Item, List),
-    format('All properties for ~w:~n', [Item]),
-    write('----------------------------------------'), nl,
-    forall(member(Property, List), format('- ~w~n', [Property])).
-
-
-% Rule: list_all_possible_properties/0
-% List all possible properties in the network in a pretty way
-% Should be functionally the same as `cat prolog_file.pl | grep -e '^has_a(' | cut -f 2 -d "," | tr -d " " | sort -u`
-% Also counts the total (equivalent to | wc)
-list_all_possible_properties :-
-    get_all_possible_properties(List),
-    length(List, Count),
-    format('All properties defined in the network:~n'),
-    write('----------------------------------------'), nl,
-    forall(member(Property, List), format('- ~w~n', [Property])),
-    nl,
-    format('Total: ~w~n', [Count]).
-
-
-% Rule: get_all_with_property/3
-% Finds all items that have a specific property-value pair (including inherited)
-get_all_with_property(Prop, Value, Item) :-
-    has_a_property(Item, Prop, Value).
-
-% Pretty-print version
-list_all_with_property(Prop, Value) :-
-    findall(Item, get_all_with_property(Prop, Value, Item), List),
+% Rule: list_items_with_property/2
+% Finds all items that have a specific property-value pair (including inherited).
+% Prints out in a pretty manner.
+list_items_with_property(Prop, Value) :-
+    findall(Item, has_a_property(Item, Prop, Value), List),
     sort(List, Sorted),
-    format('Entities with ~w = ~w:~n', [Prop, Value]),
+    format('Items with Property ~w = ~w:~n', [Prop, Value]),
     write('----------------------------------------'), nl,
     forall(member(I, Sorted), format('- ~w~n', [I])).
 
@@ -574,42 +551,46 @@ list_all_with_property(Prop, Value) :-
 show_tree(Root) :- 
     show_tree(Root, 0).
 
-% Recursive tree with levels shown in brackets
+% Recursive tree 
 show_tree(Item, Depth) :-
     Indent is Depth * 3,
     tab(Indent), 
-    format('-- ~w [~w]~n', [Item, Depth]),
+    format('-- ~w ~n', [Item]),
     NewDepth is Depth + 1,
     % Find all children and recursively print them
     forall(is_a(Child, Item), show_tree(Child, NewDepth)).
 
 
 
-% Rule: is_in_era/2
+% Rule: list_weapons_by_year/1
+% Finds all weapons used in a specific year and prints Era
+list_weapons_by_year(Year) :-
+    % Find all pairs of Item-Era where the Item was active in the given Year
+    findall(Weapon-Era, (is_in_era(Weapon, Year), has_a_property(Weapon, era_used, Era)), List),
+    sort(List, Sorted),
+    format('Weapons active in the year ~w:~n', [Year]),
+    write('----------------------------------------'), nl,
+    % Split the Item and Era for formatting
+    forall(member(I-E, Sorted), format('- ~w (~w)~n', [I, E])).
+
 % Success if Year falls within the Era defined for the Item
 is_in_era(Weapon, Year) :-
     has_a_property(Weapon, era_used, Era),
     check_year(Year, Era).
 
-% Case A: Exact Match (e.g., has_a(almace, era_used, 778))
+% Exact match (e.g., has_a(almace, era_used, 778))
 check_year(Year, Year) :- 
     number(Year).
 
-% Case B: Range Match (e.g., has_a(arbalest, era_used, (1300, 1500)))
+% Range match (e.g., has_a(arbalest, era_used, (1300, 1500)))
 check_year(Year, (Start, End)) :- 
     Year >= Start, 
     Year =< End.
 
-% Main Query: Find all weapons in use in a specific year
-list_weapons_by_year(Year) :-
-    findall(Weapon, is_in_era(Item, Year), List),
-    sort(List, SortedList),
-    format('Weapons active in the year ~w:~n', [Year]),
-    write('----------------------------------------'), nl,
-    forall(member(I, SortedList), format('- ~w~n', [I])).
 
 
-% Weights Higher number = longer range
+% Weights 
+% Higher number = longer range
 range_to_weight(long, 3).
 range_to_weight(medium, 2).
 range_to_weight(short, 1).
@@ -620,7 +601,7 @@ longer_range(Weapon1, Weapon2) :-
     has_a_property(Weapon1, effective_range, Value1),
     has_a_property(Weapon2, effective_range, Value2),
     % Get weights for each
-    range_to_weight(Value1, Rank1),     
-    range_to_weight(Value2, Rank2),
+    range_to_weight(Value1, Weight1),     
+    range_to_weight(Value2, Weight2),
     % Compare
-    Rank1 > Rank2.  
+    Weight1 > Weight2.  
