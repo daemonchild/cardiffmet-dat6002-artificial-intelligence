@@ -1,10 +1,23 @@
-% Medieval Weapons Semantic Network in Prolog
-% Auto generated from SemanticNetwork Class, by Tom Rowan
 
-% is_a facts
+%
+
+% ***** Medieval Weapons Semantic Network in Prolog *****
 
 % root_node is weapon
 
+%
+
+%
+
+% ***** IS-A Facts
+
+%
+
+%
+
+% ***** IS-A Facts
+
+%
 is_a( melee_weapon, weapon ).
 is_a( ranged_weapon, weapon ).
 is_a( siege_weapon, weapon ).
@@ -90,8 +103,11 @@ is_a( corsque, winged_spear ).
 is_a( partisan, winged_spear ).
 is_a( ranseur, corsque ).
 
-% has_a facts
+%
 
+% ***** HAS-A Facts
+
+%
 has_a( almace, era_used,778 ).
 has_a( almace, used_by,archbishop_turpin ).
 has_a( anelace, length_inches,(20,30) ).
