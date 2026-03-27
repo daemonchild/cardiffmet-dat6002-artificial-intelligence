@@ -1,22 +1,13 @@
-
 %
-
 % ***** Medieval Weapons Semantic Network in Prolog *****
-
-% root_node is weapon
-
 %
-
+% Root_node is 'weapon'
 %
-
+%
 % ***** IS-A Facts
-
 %
-
 %
-
 % ***** IS-A Facts
-
 %
 is_a( melee_weapon, weapon ).
 is_a( ranged_weapon, weapon ).
@@ -102,11 +93,8 @@ is_a( spetum, winged_spear ).
 is_a( corsque, winged_spear ).
 is_a( partisan, winged_spear ).
 is_a( ranseur, corsque ).
-
 %
-
 % ***** HAS-A Facts
-
 %
 has_a( almace, era_used,778 ).
 has_a( almace, used_by,archbishop_turpin ).
