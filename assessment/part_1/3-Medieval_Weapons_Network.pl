@@ -451,7 +451,8 @@ is_a_member(Item, Class) :-
     is_a(Item, Parent), 
     is_a_member(Parent, Class).
 
-% Get all parents
+
+% Get all parents and self
 is_a_member_inc_self(X, Y) :- X = Y; is_a_member(X, Y).
 
 
