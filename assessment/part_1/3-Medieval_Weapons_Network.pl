@@ -434,7 +434,10 @@ has_a( winged_spear, historical_origin,romans ).
 has_a( winged_spear, historical_origin,vikings ).
 has_a( winged_spear, is_throwable,throwable ).
 
-% Rules (Generic for is_a, has_a semantic networks produced by Class)
+
+%
+% ***** Generic is_a / has_a Sementic Network Rules 
+%
 
 % Inheritance Rule - IS-A
 
@@ -562,9 +565,13 @@ show_tree(Item, Depth) :-
 
 
 
-% Rule: list_weapons_by_year/1
+%
+% ***** Medieval Weapon Specific Rules 
+%
+
+% Rule: list_weapons_in_use_year/1
 % Finds all weapons used in a specific year and prints Era
-list_weapons_by_year(Year) :-
+list_weapons_in_use_year(Year) :-
     % Find all pairs of Item-Era where the Item was active in the given Year
     findall(Weapon-Era, (is_in_era(Weapon, Year), has_a_property(Weapon, era_used, Era)), List),
     sort(List, Sorted),
@@ -573,16 +580,17 @@ list_weapons_by_year(Year) :-
     % Split the Item and Era for formatting
     forall(member(I-E, Sorted), format('- ~w (~w)~n', [I, E])).
 
+
 % Success if Year falls within the Era defined for the Item
 is_in_era(Weapon, Year) :-
     has_a_property(Weapon, era_used, Era),
     check_year(Year, Era).
 
-% Exact match (e.g., has_a(almace, era_used, 778))
+% Exact match (has_a(almace, era_used, 778))
 check_year(Year, Year) :- 
     number(Year).
 
-% Range match (e.g., has_a(arbalest, era_used, (1300, 1500)))
+% Range match (has_a(arbalest, era_used, (1300, 1500)))
 check_year(Year, (Start, End)) :- 
     Year >= Start, 
     Year =< End.

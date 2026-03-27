@@ -1,5 +1,8 @@
 
-% Rules (Generic for is_a, has_a semantic networks produced by Class)
+
+%
+% ***** Generic is_a / has_a Sementic Network Rules 
+%
 
 % Inheritance Rule - IS-A
 
@@ -126,6 +129,10 @@ show_tree(Item, Depth) :-
     forall(is_a(Child, Item), show_tree(Child, NewDepth)).
 
 
+
+%
+% ***** Medieval Weapon Specific Rules 
+%
 
 % Rule: list_weapons_in_use_year/1
 % Finds all weapons used in a specific year and prints Era
