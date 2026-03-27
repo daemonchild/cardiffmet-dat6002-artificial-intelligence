@@ -61,7 +61,7 @@ stone_thrower,artillery,pierrier,stone,,impact,,,,,,,,,,,,,wood,,,,
 arming_sword,sword,,,,,,,,,"1000,1350",two_edges,,,,"30,32",,,,,,knight,
 broad_sword,sword,,,,thrust,,,,,"1600,1800",two_edges,basket_hilt,,,"30,32",,,,,,,
 falchion,sword,,,,,,,,,"1000,1500",one_edge,,europe,,"30,32",,,,,,mounted_knight,
-long_sword,sword,bastard_sword; great_sword; hand_and_a_half_sword,,,thrust,,,,,"1350,1550",two_edges,fullers_aka_blood_grooves,europe,,"40,48",,,,,,knight,"1.2,2.4"
+long_sword,sword,bastard_sword; great_sword; hand_and_a_half_sword,,,thrust,,,,,"1250,1550",two_edges,fullers_aka_blood_grooves,europe,,"40,48",,,,,,knight,"1.2,2.4"
 cleaver_falchion,falchion,,,,,,,,,,,,,,,,,,,,,
 cusped_falchion,falchion,,,,,,,,,,,,,,,,,,,,,
 anelace,dagger,,,,,,,,,,,,,,"20,30",,,,,,,

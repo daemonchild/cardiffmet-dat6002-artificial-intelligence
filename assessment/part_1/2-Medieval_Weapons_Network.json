@@ -580,7 +580,7 @@
             "id": "long_sword"
         },
         {
-            "id": "1350,1550"
+            "id": "1250,1550"
         },
         {
             "id": "bastard_sword"
@@ -2424,7 +2424,7 @@
         {
             "label": "era_used",
             "source": "long_sword",
-            "target": "1350,1550"
+            "target": "1250,1550"
         },
         {
             "label": "alternate_name",

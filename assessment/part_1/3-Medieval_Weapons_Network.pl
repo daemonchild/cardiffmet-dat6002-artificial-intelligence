@@ -281,7 +281,7 @@ has_a( long_sword, alternate_name,bastard_sword ).
 has_a( long_sword, alternate_name,great_sword ).
 has_a( long_sword, alternate_name,hand_and_a_half_sword ).
 has_a( long_sword, attack_type,thrust ).
-has_a( long_sword, era_used,(1350,1550) ).
+has_a( long_sword, era_used,(1250,1550) ).
 has_a( long_sword, has_edges,two_edges ).
 has_a( long_sword, has_part,fullers_aka_blood_grooves ).
 has_a( long_sword, historical_origin,europe ).
@@ -451,6 +451,9 @@ is_a_member(Item, Class) :-
     is_a(Item, Parent), 
     is_a_member(Parent, Class).
 
+% Get all parents
+is_a_member_inc_self(X, Y) :- X = Y; is_a_member(X, Y).
+
 
 % Inheritance Rule - HAS-A Properties 
 
@@ -558,7 +561,7 @@ show_tree(Root) :-
 show_tree(Item, Depth) :-
     Indent is Depth * 3,
     tab(Indent), 
-    format('-- ~w ~n', [Item]),
+    format('-- ~w (~w)~n', [Item, Depth]),
     NewDepth is Depth + 1,
     % Find all children and recursively print them
     forall(is_a(Child, Item), show_tree(Child, NewDepth)).

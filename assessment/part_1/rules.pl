@@ -17,6 +17,10 @@ is_a_member(Item, Class) :-
     is_a_member(Parent, Class).
 
 
+% Get all parents and self
+is_a_member_inc_self(X, Y) :- X = Y; is_a_member(X, Y).
+
+
 % Inheritance Rule - HAS-A Properties 
 
 % Rule: has_a_property/3
@@ -123,7 +127,7 @@ show_tree(Root) :-
 show_tree(Item, Depth) :-
     Indent is Depth * 3,
     tab(Indent), 
-    format('-- ~w ~n', [Item]),
+    format('-- ~w (~w)~n', [Item, Depth]),
     NewDepth is Depth + 1,
     % Find all children and recursively print them
     forall(is_a(Child, Item), show_tree(Child, NewDepth)).
