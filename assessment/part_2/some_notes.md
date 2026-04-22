@@ -1,5 +1,7 @@
 # Notes for report:
 
+PCA... feature reduction... not for assessment, but read up.
+
 Why use a Validation set instead of just the Test set?
 
 If you use your Test set to decide when to stop training or what learning rate to use, you are technically "leaking" information. You might end up with a model that performs great on that specific Test set but fails in the real world. By using a Validation set, you keep the Test set completely "unseen" until the very final moment of your project.
