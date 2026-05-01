@@ -79,3 +79,26 @@ When you look at this graph, you will likely see a "Cross":
     As Threshold decreases: Recall goes UP (you catch all the customers), but Precision crashes because you are calling everyone a "Yes."
 
 The "Sweet Spot": In your report, you can point to the intersection of the Precision and Recall lines. This is often where the model is performing most fairly across both classes. Based on your previous confusion matrix, you'll likely find this "sweet spot" is much lower than 0.5 (probably around 0.12 to 0.18).
+
+
+
+Notes for report:
+
+Why use a Validation set instead of just the Test set?
+
+If you use your Test set to decide when to stop training or what learning rate to use, you are technically "leaking" information. You might end up with a model that performs great on that specific Test set but fails in the real world. By using a Validation set, you keep the Test set completely "unseen" until the very final moment of your project.
+
+
+Three Crucial "Scratch" Tips for your Assessment:
+
+1. The "Sign" of your Update: In your _weight_bias_update, you are using:
+self.weights_1 = self.weights_1 + (input_x_delta1 ...)
+Normally, Gradient Descent subtracts the gradient. However, because you calculated error_output_layer as Target - Output (which is the negative gradient), using + is mathematically correct here. Just keep an eye on that!
+
+2. Accuracy vs. Error:
+Error (MAE) is great for the math, but your assessment likely wants to see Accuracy. You can add a quick method to calculate how many predictions were correct:
+
+
+To know how "wrong" the network is, we use Binary Cross-Entropy Loss (also called Log Loss). This is much more effective for classification than Mean Squared Error.
+Loss=−m1​∑[y⋅log(y^​)+(1−y)⋅log(1−y^​)]
+
