@@ -1,7 +1,7 @@
 
 
 %
-% ***** Generic is_a / has_a Sementic Network Rules 
+% ***** Generic is_a / has_a Semantic Network Rules 
 %
 
 % Inheritance Rule - IS-A
