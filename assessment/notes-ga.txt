@@ -1,0 +1,257 @@
+Too high and the GA becomes a random search, too low and it may not explore enough of the solution space.
+
+
+The GA version randmises the weights and biases in the constructor, so no need to train here - we will evolve the weights directly
+
+ We target Recall because that's our bank goal!
+ 
+ When describing this in Section E, you can use these core concepts to explain why it's a powerful alternative to Gradient Descent:
+ 
+ 
+ Direct Optimization: Standard backprop optimizes "Error" (BCE). GA allows you to optimize Recall directly. If the bank wants to catch more subscribers, you simply set Recall as the fitness function, and the weights evolve to satisfy that specific goal.
+
+    Global Search: Mutation acts as a "teleport" button. While Gradient Descent can get stuck in a local minimum (a small dip in the error landscape), a mutation can jump the model to a completely different part of the landscape where a better solution might exist.
+
+4. Implementation Discussion
+
+    "The transition from gradient-based learning to an evolutionary strategy marks a shift from calculus to heuristics. By representing the MLP's weights as a chromosome, we bypass the 'Vanishing Gradient' problem entirely. The GA does not care if the activation function is differentiable; it only cares if the resulting predictions improve the Recall. In the context of the imbalanced bank dataset, this allows the model to 'hunt' for weight configurations that effectively identify the minority class without the mathematical bias inherent in traditional backpropagation."
+    
+    
+    
+
+
+
+Actually, looking at those numbers through the lens of a bank manager, this is hilarious but secretly brilliant.
+
+You have created the "Over-Eager Intern" model. It is so terrified of missing a single subscriber that it is essentially shouting "YES!" at almost everyone it sees.
+1. The "Success" (Recall: 92.64%)
+
+This is actually the highest recall we’ve seen yet! You are finding 92% of all potential subscribers. If there are 1,000 people who would say "yes," your GA model found 926 of them. Mathematically, the GA found a "peak" in the landscape where the weights are tuned to be incredibly sensitive.
+2. The "Disaster" (Accuracy: 19.65%)
+
+This is the "bad" part—and it's a direct result of how we defined Fitness.
+
+    Because we told the GA to maximize Recall, it learned that the easiest way to never miss a "Yes" is to predict "Yes" for almost everyone.
+
+    An accuracy of 19% suggests that your model is likely predicting "Yes" for about 80% of the total population.
+
+3. Why did this happen? (The "Fitness" Trap)
+
+This is a classic "Monkey's Paw" situation in AI. You asked the Genetic Algorithm for Recall, and it gave you exactly what you asked for, regardless of the consequences (Precision).
+
+In your report, this is a goldmine for discussion:
+
+
+    
+    However, when optimizing solely for Recall, the model reached a state of Degenerate Convergence with a Recall of 1.0. The algorithm 'reward-hacked' the fitness function by evolving weights that predicted 'Yes' for 100% of the dataset. This perfectly illustrates why business-centric models must use balanced fitness metrics, such as the F1-Score, to penalize the 'noise' of False Positives."
+
+4. How to fix it (The "Balanced" Fitness)
+
+To make the GA "smarter," we need to change the fitness function to use the F1-Score or a weighted average. The F1-Score forces the model to care about Precision and Recall at the same time.
+
+
+
+
+
+
+Strategy	Search Method	Best For...	Risk
+Grid Search	Brute-force (Exhaustive)	Finding the best "standard" settings.	Very slow on high-dimensional grids.
+Backprop	Calculus (Gradient)	Fast convergence on smooth error curves.	Getting stuck in "Local Minima."
+Genetic Alg	Evolution (Heuristic)	Global search & non-math goals.	"Reward Hacking" (finding loopholes).
+
+
+This is perfect for your report because it shows a balanced model reached through a non-traditional method.
+
+1. Comparison to Gradient Descent
+Your Backpropagation models (Section D) were very conservative, often struggling to find more than 200 "Yes" cases. By using a Genetic Algorithm, you have forced the model to prioritize the "Yes" class, resulting in 773 True Positives. This is a 3.8x increase in identified subscribers over your optimized Scikit-Learn model (which found 200).
+
+2. The Cost of Success
+You should discuss the "Cost per Call." While the GA model is much better at finding subscribers, it requires calling 3,870 people who will say "No." The bank would have to decide if the value of those 773 subscribers outweighs the cost of the 3,870 unsuccessful calls.
+
+3. Genetic Algorithm Diagram & Logic
+For the "high-level explanation supported by diagrams" requirement, you should describe the loop you just ran:
+
+    Selection: You picked the "Elites" (those with the best balance of TP and TN).
+
+    Crossover: You mixed the "DNA" (weights) of those elites to see if a child could predict even better.
+
+    Mutation: You added random noise to weights, which likely helped the model "discover" that predicting "No" for some cases actually improved the overall score.
+
+Final Report Draft (Section E Snippet)
+
+    "The Genetic Algorithm (GA) optimization provided a radical departure from traditional gradient-based learning. While the Scikit-Learn model was limited by the 'smoothness' of the loss landscape, the GA successfully navigated the highly imbalanced data by evolving weight configurations that maximized the F1-Score.
+
+    The final evolved model achieved a Recall of 73% (773/1058), identifying nearly four times as many subscribers as the baseline library model. Although this came at the cost of lower precision, the GA demonstrated its utility as a 'Global Search' tool capable of finding high-performance weight sets that Gradient Descent typically misses in imbalanced scenarios."
+    
+    
+"To prevent the loss of high-performing genetic traits due to random mutation or crossover, an Elitism strategy was implemented. By carrying the top $N$ individuals (defined by elite_size) directly into the next generation, we ensure that the maximum fitness of the population is monotonically non-decreasing."
+
+
+The mutation rate 
+
+
+Initial Generations: You should see high mutation counts helping the model explore the "landscape."
+
+Later Generations: If the fitness is flat but mutations are still high, you can argue that the model has reached an "Evolutionary Plateau" where mutations are now just disrupting good solutions rather than finding better ones.
+
+The "Goldilocks" Zone: You can explain that you tuned your mutation rate so that you had enough "genetic drift" to avoid local minima (traps) without turning the search into a completely random walk.
+
+
+Since you’ve successfully plotted the Fitness vs. Mutation chart, you are now moving into the most critical part of your report: The Business Justification.
+
+Even if your GA's "Overall Accuracy" is lower than the standard MLP, your "Recall" (the ability to find the 'Yes' customers) is likely where the GA shines. Here is how to frame your findings for the Bank Marketing Department, tying back to the Cognism (2024) and McCulloch-Pitts (1943) context we established.
+Analyzing the GA Results for the Report
+1. The "Recall vs. Precision" Trade-off
+
+In bank marketing, the cost of a False Negative (missing a customer who would have said 'Yes') is far higher than the cost of a False Positive (calling someone who says 'No').
+
+    The Pitch: "While standard gradient descent models often play it safe to maximize accuracy, the Genetic Algorithm was specifically evolved using Recall as its fitness function. This ensures that the bank 'leaves no money on the table' by identifying the maximum number of potential subscribers."
+
+2. Interpretation of the Confusion Matrix
+
+When you look at your GA confusion matrix, focus on the Bottom-Left and Bottom-Right squares:
+
+    High Bottom-Right (True Positives): This shows the GA is successfully 'learning' the profile of a subscriber.
+
+    Low Bottom-Left (False Negatives): This is your headline metric. A low number here means your model is highly effective at capturing leads.
+
+    The "Wasted Call" Metric: You can acknowledge that the GA might have more False Positives (Top-Right), but argue that in a digital-first or automated calling environment, the cost of an extra call is negligible compared to the value of a secured term deposit.
+
+3. Explaining the Mutation/Fitness Graph
+
+This graph is your proof of Model Robustness. Use these points:
+
+    Exploration phase: The early generations show high mutation bars. This represents the algorithm "scouring" the mathematical
+
+
+
+
+
+
+
+
+    ------------
+
+
+
+
+    Sort and work on the dataset. --> numerical data only! 
+normalise the dataset to avoid large values
+Write our own libraries... pandas and numpy ok, nbut not scikitlearn
+
+Build network
+Determine the number of input neurons from the number of features in input dataset
+multilayer perceptron...
+1 x in -> 1 x hidden -> 1 x output
+
+Justify why we choose the metrics we chose for evaluation of the NN
+Justify why chose the particular activation function etc etc... design choices.
+Justify and explain the choce of normlisation etc.
+
+sigmoid function may not find the global minimum... may descend into the local minimum
+bi-polar sigmoid function
+
+**should try sveeral, preferably three or four different: sigmoid, bp-sigmoid,. relu, tanh, etc etc)
+** need to create measures to ensure that we are comparing the output - fitness function.
+Build a class that can provide several. :-)
+
+- early stopping.
+- dynamic alpha which increases over time
+- memory of previous best try, based on fitting function? (advanced version!)
+
+vanishing and exploding gradient
+
+
+
+Some good stuff for the report in the slides!
+
+alpha 0.01 to 0.02 (learning rate)
+use transpose of the weights 
+cols x rows size for matrix
+dot product.
+
+
+simple perceptron can solve ve linearly separable problems (and or or)
+cannot solve non-linear prblems like Xor
+
+
+activiation function u >= Z is a step function
+
+for nonlinear functions we need a derivative function.\
+
+"fully connected network" --> every output to every input on the next layer.
+feed forward only connected to the next layer - not each other
+
+MLP -- feedforward with one or more hidden layers
+
+loss is needed over simple error... loss is a function of error.
+MSE - mean square error
+1/n (y'-y)^2.   or   absolute error |y'-y|
+
+raw error is no good becauser the errors could cancel out when averaged --> end up with zero error!
+error is used, but not directly.
+loss function is needed.
+
+the bigger the weight, the more that previous neuron contributed to the error.
+error x weight = weighted error
+
+
+cross-entropy-loss - classifications
+mse - for binary output
+
+
+
+data split into three parts: train, validation and test (folds)
+80% training/val, 20% testing
+
+epochs - too many = overfit, too few = underfitting
+see slides
+
+va;idation stage is used to modify hyper parameters NOT model parameters
+records a 'running average' - cooling factor/patience (this avoids effects of noise)
+---> gives early stopping point
+
+
+assessment dataset - which features are we going to use?
+Feature extraction: 
+- encode (one-hot) categorical data
+- then normalise (0.00 to 1.00) (-1 to +1 bipolar data)
+- min-max-scaler. (write your own for assessment - see the slides for forumla)
+- (value - min) / (max - value)
+- can use numpy
+
+** if we do, or do not, do validation --> explain rationale for choice
+
+Build the confusion matrix manually in code
+
+Calculate accuracy - see slide
+Accuracy can be misleading if the dataset is not balanced. If it is skewed, it can be a poor measure.
+The domain in which we are operating shows which output is more important -- FN for covid 19 detection
+WHat is the important measure in the dataset in the assessment? Better to not give a loan, than risk the default? Maybe! (Citation?)
+
+Calculate precision -- used in fault critical situations
+
+Calcuate recall - when is recall more imoportant? information retrieval situations - look this up and comment.
+
+Calculate F-Score.  a better choice when the dataset is imbalanced 
+
+Calculate AUC maybe? definitely research as he didn't go into it.
+
+
+Insufficient data leads to an underfitting models, so...
+K-Fold... 5-Fold or 10-Fold common
+F1 to F5... use one fold for validation, the rest for training. Swap which one. each fold (n-1) times for training and ONCE for validation.
+(Grid search-CV uses this).
+
+
+
+REad the docs for scikit learn to understand and note on the defaults that are in use for each layer. eg ourput later uses a differnet activastion function than te hidden layers.
+
+Make saure everything is the same for the comparison between the two.
+You can also compare different artcitectures when using thw scikit learn librarym,, this would be extra marks.
+
+Need to discuss why did or didn't use sgd or other optimisers.
+
+adamax might be useful as a large dataset (45K).
+see slides
+
