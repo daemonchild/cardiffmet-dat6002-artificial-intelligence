@@ -3,17 +3,10 @@ pandas
 numpy
 matplotlib
 seaborn
-tabulate
 colorama
-cartopy
-geopandas
-pycountry
 scikit-learn
-plotly
 nbformat>=4.2.0
 notebook
 jupyterlab
 ipython
-geopy 
 networkx
-pyvis
