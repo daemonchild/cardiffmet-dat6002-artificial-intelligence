@@ -6,3 +6,4 @@ notebook
 ipython
 networkx
 pyvis
+nbconvert
